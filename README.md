@@ -5,9 +5,9 @@
 # Star Wars Einzelprojekt – Software-Projekt
 
 <p align="center">
-  <a href="\meta\readmes\README_EN.md">English</a>
-  <a href="\meta\readmes\README_ES.md">Español</a>
-  <a href="\meta\readmes\README_FR.md">Français</a>
+  <a href="/meta/readmes/README_EN.md">English</a>
+  <a href="/meta/readmes/README_ES.md">Español</a>
+  <a href="/meta/readmes/README_FR.md">Français</a>
 </p>
 
 Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **Software-Projekt** entwickelt wird.
