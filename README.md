@@ -1,9 +1,14 @@
+<div align="center">
 <p align="center">
-  <img src="images/Read.me_Assets/uni-ulm-logo.png" alt="Bildbeschreibung" width="25%">
+  <img src="images/Read.me_Assets/uni-ulm-logo.png" alt="Uni Logo" 
+  width="25%">
 </p>
+</div>
+<div align="center">
 
 # Star Wars Einzelprojekt – Software-Projekt
 
+</div>
 <p align="center">
   <a href="/meta/readmes/README_EN.md">English</a>
   <a href="/meta/readmes/README_ES.md">Español</a>
