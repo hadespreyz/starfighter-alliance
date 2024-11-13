@@ -21,7 +21,7 @@ Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **So
 
 - ⚠️ Dieses Projekt ist noch in **aktiver** Entwicklung.
 - ⚠️ Erwarte bugs und starke Änderungen.
-- ⚠️ **Dieses Projekt wird "wie besehen" bereitgestellt1.**
+- ⚠️ **Dieses Projekt wird "wie besehen" bereitgestellt.**
 
 ## Inhaltsverzeichnis
 - [Star Wars Einzelprojekt – Software-Projekt](#star-wars-einzelprojekt--software-projekt)
