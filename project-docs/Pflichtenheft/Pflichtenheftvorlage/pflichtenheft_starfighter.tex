@@ -106,7 +106,7 @@
 
 \fancyfoot[L]{Alhasan Ramadan}
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
-\fancyfoot[R]{v.2.0.6}
+\fancyfoot[R]{v.2.1.2}
 
 \renewcommand{\headrulewidth}{0.8pt} % Linie unter der Kopfzeile
 \renewcommand{\footrulewidth}{0.8pt} % Linie über der Fußzeile
@@ -428,6 +428,88 @@ Verlässt das Hindernis im Moving-Zustand den Bildschirm, erfolgt ebenfalls der 
 \end{figure}
 
 \newpage
-	\subsection{Klassendiagramme}
+	\subsection{Klassendiagramm}
+
+In diesem Abschnitt wird das Klassendiagramm\footnotemark[4] für Starfighter Alliance vorgestellt. Es zeigt die verschiedenen Klassen des Systems, deren Attribute und Methoden sowie die Beziehungen zwischen ihnen. Eine detaillierte Beschreibung des Diagramms nach Ansichten der Software-Architektur folgt.
+
+\footnotetext[4]{Referenz aus \textcolor{blue}{\href{https://sparxsystems.com/resources/tutorials/uml2/class-diagram.html}{sparxsystems.com}}}
+
+\begin{figure}
+\centering
+	\includegraphics[width=1\textwidth]{../../../images/Pflichtenheft_Assets/uml-class-diagram/uml-class-diagram.png}\\
+	\caption{uml-class-diagram.png}
+\end{figure}
+\newpage
+\subsubsection{Statische Sicht}
+
+Die statische Sicht zeigt die Struktur des Systems und die Beziehungen zwischen den Klassen. Die wichtigsten Komponenten sind:
+
+\begin{itemize}
+    \item \textbf{Hauptbildschirme des Spiels}: Die Klassen StartScreen, GameScreen, PauseScreen, EndScreen und SelectionScreen verwalten die verschiedenen Zustände des Spiels. Jede dieser Klassen enthält Methoden zur Initialisierung und Übergangssteuerung, um einen nahtlosen Wechsel zwischen den Bildschirmen zu ermöglichen.
+
+    \item \textbf{Datenmanagement-Komponenten}: Die Klassen DataManagerGUI, OriginalDataManager und Database übernehmen die Verwaltung der Spieldaten. DataManagerGUI fungiert als Schnittstelle für den Datenzugriff und kommuniziert mit der Database, um Spielstände und Highscores zu speichern.
+
+    \item \textbf{Netzwerkkomponenten}: Die Klassen Client und Server ermöglichen die Netzwerkfunktionen des Systems. Der Server verwaltet die Netzwerkverbindungen und erlaubt die Kommunikation mit mehreren Client-Instanzen.
+
+    \item \textbf{Spielobjekte und Mechaniken}: Die Klassen SpaceShip, Wave, Obstacle und Shot stellen die Objekte und Mechaniken im Spiel dar. Die Basisklasse MovingObject definiert gemeinsame Attribute und Methoden für bewegliche Objekte und wird von SpaceShip und Obstacle geerbt.
+\end{itemize}
+
+\subsubsection{Komponentensicht}
+
+Die Komponentensicht beschreibt, wie die verschiedenen Teile des Systems organisiert sind und zusammenarbeiten:
+
+\begin{itemize}
+    \item \textbf{Godot-API-Komponenten\footnotemark[5]}: Die Godot-Komponenten Button, Timer, Audio, AnimationPlayer und verschiedene Physikkomponenten (z.B. KinematicBody2D oder StaticBody2D) werden für Benutzerinteraktionen, Sound und Animation genutzt.
+
+    \item \textbf{Datenmanagement und Datenbankanbindung\footnotemark[6]}: DataManagerGUI und OriginalDataManager arbeiten zusammen, um den Zugriff auf die Database zu verwalten, die die Spielstände für den Highscore speichert.
+
+    \item \textbf{Netzwerkmodul}: Die Klassen Client und Server ermöglichen die Kommunikation im Netzwerk. Der Server verwaltet mehrere Client-Instanzen und unterstützt den Datenaustausch.
+
+    \item \textbf{Spielmechanik und Objekte}: Die Klasse GameScreen koordiniert die Instanzen von Wave, SpaceShip und Shot und steuert den Spielablauf.
+\end{itemize}
+
+\footnotetext[5]{GODOT Implementierung übernommen aus \textcolor{blue}{\href{https://docs.godotengine.org/en/stable/contributing/development/core_and_modules/godot_architecture_diagram.html}{docs.godotengine.org}}}
+\footnotetext[6]{Aufbau der Datenklasse aus \textcolor{blue}{\href{https://www.researchgate.net/figure/Class-diagram-of-the-database-management-module_fig4_357706024}{researchgate.net}}}
+
+\newpage
+\subsubsection{Verhaltenssicht}
+
+Die Verhaltenssicht beschreibt die dynamische Interaktion zwischen den Klassen:
+
+\begin{itemize}
+    \item \textbf{Spielablaufsteuerung}: GameScreen verwaltet den Hauptspielablauf und steuert die Spiellogik. Methoden wie startWave() und updateScore() werden verwendet, um Wellen zu starten und die Punktzahl zu aktualisieren.
+
+    \item \textbf{Interaktion zwischen Spielobjekten}: SpaceShip und Shot interagieren mit Obstacle-Instanzen. Kollisionen werden über checkCollision() verarbeitet.
+
+    \item \textbf{Bildschirmübergänge}: Die Klassen StartScreen, PauseScreen, EndScreen und SelectionScreen bieten Methoden zur Steuerung der Zustandsübergänge.
+
+    \item \textbf{Datenoperationen}: DataManagerGUI verwaltet die Speicherung und den Abruf von Spielergebnissen über die Database.
+
+    \item \textbf{Netzwerkinteraktionen}: Der Client kommuniziert mit dem Server und kann Daten wie Farben über Verbindungen synchronisieren.
+\end{itemize}
+
+\subsubsection{Abhängigkeitssicht}
+
+Die Abhängigkeitssicht zeigt die Abhängigkeiten der Systemkomponenten:
+
+\begin{itemize}
+    \item \textbf{Zentrale Abhängigkeiten der GameScreen-Klasse}: GameScreen koordiniert die Spielobjekte und Mechaniken. Änderungen in GameScreen können Auswirkungen auf Wave, SpaceShip, DataManagerGUI und OriginalDataManager haben.
+
+    \item \textbf{Datenabhängigkeiten}: DataManagerGUI und OriginalDataManager sind von der Database abhängig. Änderungen an der Database-Struktur könnten Anpassungen erfordern.
+
+    \item \textbf{Netzwerkabhängigkeit zwischen Client und Server}: Client und Server sind miteinander verknüpft, und Änderungen im Server können Anpassungen im Client notwendig machen.
+\end{itemize}
+
+\subsubsection{Benutzeroberfläche und Godot-Integration}
+
+Das System nutzt verschiedene Komponenten der Godot-API für die Benutzeroberfläche und Spielfunktionen:
+
+\begin{itemize}
+    \item \textbf{Interaktive Elemente}: Button und Timer werden in den Bildschirmen (StartScreen, PauseScreen etc.) verwendet, um Benutzerinteraktionen zu steuern.
+
+    \item \textbf{Audio und Animationen}: Die Komponenten Audio und AnimationPlayer werden genutzt, um Soundeffekte und Animationen abzuspielen.
+
+    \item \textbf{Physik und Kollisionserkennung}: Komponenten wie KinematicBody2D und StaticBody2D ermöglichen Bewegung und Kollisionserkennung für Objekte wie SpaceShip, Shot und Obstacle.
+\end{itemize}
 
 \end{document}
