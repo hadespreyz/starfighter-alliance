@@ -106,7 +106,7 @@
 
 \fancyfoot[L]{Alhasan Ramadan}
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
-\fancyfoot[R]{v.2.1.2}
+\fancyfoot[R]{v.2.1.5}
 
 \renewcommand{\headrulewidth}{0.8pt} % Linie unter der Kopfzeile
 \renewcommand{\footrulewidth}{0.8pt} % Linie über der Fußzeile
@@ -440,64 +440,57 @@ In diesem Abschnitt wird das Klassendiagramm\footnotemark[4] für Starfighter Al
 	\caption{uml-class-diagram.png}
 \end{figure}
 \newpage
-\subsubsection{Statische Sicht}
+\subsubsection{Logical View (Logische Sicht)}
 
-Die statische Sicht zeigt die Struktur des Systems und die Beziehungen zwischen den Klassen. Die wichtigsten Komponenten sind:
-
+Die logische Sicht beschreibt die statische Struktur des Systems, einschließlich der wichtigsten Klassen und deren Beziehungen:
 \begin{itemize}
-    \item \textbf{Hauptbildschirme des Spiels}: Die Klassen StartScreen, GameScreen, PauseScreen, EndScreen und SelectionScreen verwalten die verschiedenen Zustände des Spiels. Jede dieser Klassen enthält Methoden zur Initialisierung und Übergangssteuerung, um einen nahtlosen Wechsel zwischen den Bildschirmen zu ermöglichen.
-
-    \item \textbf{Datenmanagement-Komponenten}: Die Klassen DataManagerGUI, OriginalDataManager und Database übernehmen die Verwaltung der Spieldaten. DataManagerGUI fungiert als Schnittstelle für den Datenzugriff und kommuniziert mit der Database, um Spielstände und Highscores zu speichern.
-
-    \item \textbf{Netzwerkkomponenten}: Die Klassen Client und Server ermöglichen die Netzwerkfunktionen des Systems. Der Server verwaltet die Netzwerkverbindungen und erlaubt die Kommunikation mit mehreren Client-Instanzen.
-
-    \item \textbf{Spielobjekte und Mechaniken}: Die Klassen SpaceShip, Wave, Obstacle und Shot stellen die Objekte und Mechaniken im Spiel dar. Die Basisklasse MovingObject definiert gemeinsame Attribute und Methoden für bewegliche Objekte und wird von SpaceShip und Obstacle geerbt.
+    \item \textbf{Hauptbildschirme des Spiels}: Die Klassen StartScreen, GameScreen, PauseScreen, EndScreen und SelectionScreen verwalten die verschiedenen Zustände des Spiels.
+    \item \textbf{Datenmanagement-Komponenten}: Klassen wie DataManagerGUI, OriginalDataManager und Database kümmern sich um die Speicherung und Verwaltung von Highscores und Spieldaten.
+    \item \textbf{Netzwerkkomponenten}: Die Klassen Client und Server ermöglichen Netzwerkfunktionen für den Multiplayer oder den Austausch von Daten.
+    \item \textbf{Spielobjekte und Mechaniken}: Klassen wie SpaceShip, Wave, Obstacle und Shot modellieren die Spielfunktionalitäten. Die Basisklasse MovingObject fasst Eigenschaften und Methoden für bewegliche Objekte zusammen.
 \end{itemize}
 
-\subsubsection{Komponentensicht}
+\subsubsection{Implementation View (Implementierungssicht)}
 
-Die Komponentensicht beschreibt, wie die verschiedenen Teile des Systems organisiert sind und zusammenarbeiten:
-
+Die Implementierungssicht beschreibt die Organisation des Codes und die Verwendung von Bibliotheken und APIs:
 \begin{itemize}
-    \item \textbf{Godot-API-Komponenten\footnotemark[5]}: Die Godot-Komponenten Button, Timer, Audio, AnimationPlayer und verschiedene Physikkomponenten (z.B. KinematicBody2D oder StaticBody2D) werden für Benutzerinteraktionen, Sound und Animation genutzt.
-
-    \item \textbf{Datenmanagement und Datenbankanbindung\footnotemark[6]}: DataManagerGUI und OriginalDataManager arbeiten zusammen, um den Zugriff auf die Database zu verwalten, die die Spielstände für den Highscore speichert.
-
-    \item \textbf{Netzwerkmodul}: Die Klassen Client und Server ermöglichen die Kommunikation im Netzwerk. Der Server verwaltet mehrere Client-Instanzen und unterstützt den Datenaustausch.
-
-    \item \textbf{Spielmechanik und Objekte}: Die Klasse GameScreen koordiniert die Instanzen von Wave, SpaceShip und Shot und steuert den Spielablauf.
+    \item \textbf{Datenmanagement und JSON-Verarbeitung}:
+    \begin{itemize}
+        \item Die Klasse ConfigurationManager liest eine JSON-Konfigurationsdatei ein, um zentrale Spieleinstellungen wie Raumschiffwerte und Leben bereitzustellen.
+        \item DataManagerGUI und OriginalDataManager organisieren den Zugriff auf die Database\footnotemark[5] zur Speicherung von Highscores.
+    \end{itemize}
+    \item \textbf{Godot-API-Integration\footnotemark[6]}:
+    \begin{itemize}
+        \item Komponenten wie Button, Timer, AnimationPlayer und KinematicBody2D aus der Godot-Engine werden für Benutzerinteraktionen, Animationen, Bewegung und Physik genutzt.
+    \end{itemize}
 \end{itemize}
 
-\footnotetext[5]{GODOT Implementierung übernommen aus \textcolor{blue}{\href{https://docs.godotengine.org/en/stable/contributing/development/core_and_modules/godot_architecture_diagram.html}{docs.godotengine.org}}}
-\footnotetext[6]{Aufbau der Datenklasse aus \textcolor{blue}{\href{https://www.researchgate.net/figure/Class-diagram-of-the-database-management-module_fig4_357706024}{researchgate.net}}}
+\footnotetext[5]{Aufbau der Datenklasse aus \textcolor{blue}{\href{https://www.researchgate.net/figure/Class-diagram-of-the-database-management-module_fig4_357706024}{researchgate.net}}}
+\footnotetext[6]{GODOT Implementierung übernommen aus \textcolor{blue}{\href{https://docs.godotengine.org/en/stable/contributing/development/core_and_modules/godot_architecture_diagram.html}{docs.godotengine.org}}}
+
 
 \newpage
-\subsubsection{Verhaltenssicht}
-
-Die Verhaltenssicht beschreibt die dynamische Interaktion zwischen den Klassen:
-
+\subsubsection{Process View (Prozesssicht)}
+Die Prozesssicht beschreibt die dynamischen Abläufe und Interaktionen der Klassen während der Laufzeit:
 \begin{itemize}
-    \item \textbf{Spielablaufsteuerung}: GameScreen verwaltet den Hauptspielablauf und steuert die Spiellogik. Methoden wie startWave() und updateScore() werden verwendet, um Wellen zu starten und die Punktzahl zu aktualisieren.
-
-    \item \textbf{Interaktion zwischen Spielobjekten}: SpaceShip und Shot interagieren mit Obstacle-Instanzen. Kollisionen werden über checkCollision() verarbeitet.
-
-    \item \textbf{Bildschirmübergänge}: Die Klassen StartScreen, PauseScreen, EndScreen und SelectionScreen bieten Methoden zur Steuerung der Zustandsübergänge.
-
-    \item \textbf{Datenoperationen}: DataManagerGUI verwaltet die Speicherung und den Abruf von Spielergebnissen über die Database.
-
-    \item \textbf{Netzwerkinteraktionen}: Der Client kommuniziert mit dem Server und kann Daten wie Farben über Verbindungen synchronisieren.
+    \item \textbf{Spielsteuerung}:
+     Die Klasse GameScreen verwaltet den Hauptspielablauf. Methoden wie startWave() und updateScore() steuern die Spiellogik.
+    \item \textbf{Interaktionen zwischen Spielobjekten}: Objekte wie SpaceShip, Shot und Obstacle interagieren dynamisch, zum Beispiel durch Kollisionserkennung.
+    \item \textbf{Datenoperationen}:
+DataManagerGUI ruft Daten aus der Database ab oder speichert neue Einträge.
+    \item \textbf{Netzwerkoperationen}:
+Client und Server synchronisieren Daten über das Netzwerk.
 \end{itemize}
 
-\subsubsection{Abhängigkeitssicht}
-
-Die Abhängigkeitssicht zeigt die Abhängigkeiten der Systemkomponenten:
-
+\subsubsection{Deployment View (Verteilungssicht)}
+Die Deployment-Sicht beschreibt die physikalische Verteilung der Software-Komponenten:
 \begin{itemize}
-    \item \textbf{Zentrale Abhängigkeiten der GameScreen-Klasse}: GameScreen koordiniert die Spielobjekte und Mechaniken. Änderungen in GameScreen können Auswirkungen auf Wave, SpaceShip, DataManagerGUI und OriginalDataManager haben.
-
-    \item \textbf{Datenabhängigkeiten}: DataManagerGUI und OriginalDataManager sind von der Database abhängig. Änderungen an der Database-Struktur könnten Anpassungen erfordern.
-
-    \item \textbf{Netzwerkabhängigkeit zwischen Client und Server}: Client und Server sind miteinander verknüpft, und Änderungen im Server können Anpassungen im Client notwendig machen.
+    \item \textbf{Lokale Architektur}:
+Das Spiel läuft auf einem Client-Gerät mit der Godot-Engine, die sowohl für Rendering als auch für die Spiellogik verantwortlich ist.
+    \item \textbf{Netzwerkarchitektur}:
+Der Server wird auf einer separaten Maschine oder in der Cloud betrieben, um Daten von mehreren Clients zu synchronisieren.
+    \item \textbf{Datenhaltung}:
+Die Database (zum Beispiel SQLite oder ein anderes lokales Speichersystem) speichert die Highscores auf dem Client oder Server.
 \end{itemize}
 
 \subsubsection{Benutzeroberfläche und Godot-Integration}
