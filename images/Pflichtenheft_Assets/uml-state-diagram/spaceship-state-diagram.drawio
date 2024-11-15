@@ -1,0 +1,171 @@
+<mxfile host="65bd71144e">
+    <diagram id="CIDdsQOdTYAMo6lLeVWL" name="Seite-1">
+        <mxGraphModel dx="1061" dy="699" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="55" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.032;entryY=0.518;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=none;endFill=0;strokeWidth=2;" parent="1" source="2" target="54" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="160" y="180"/>
+                            <mxPoint x="160" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=none;html=1;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=none;endFill=0;strokeWidth=2;" parent="1" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="190" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="205" y="190"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" style="edgeStyle=none;html=1;strokeColor=#000000;strokeWidth=2;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=none;endFill=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="2" target="59" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=none;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;" parent="1" source="2" target="72" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;b style=&quot;font-size: 20px;&quot;&gt;IDLE&lt;br&gt;&lt;/b&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;entry / set animation on &quot;wait&quot;&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;do / waiting for player input&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;exit / initialize movement-direction&lt;/span&gt;" style="html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=30;dashed=0;fillColor=#B3C5D0;fontColor=#000000;strokeColor=#000000;fontFamily=TeX Gyre Termes;whiteSpace=wrap;shadow=0;glass=0;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="120" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" style="edgeStyle=none;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=none;endFill=0;strokeWidth=2;" parent="1" source="3" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#000000;strokeWidth=2;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=none;endFill=0;" parent="1" source="3" target="69" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="250" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="&lt;b style=&quot;font-size: 20px;&quot;&gt;MOVING&lt;br&gt;&lt;/b&gt;&lt;br&gt;entry / starting movement animation&lt;br&gt;do / constant ship movement&lt;br&gt;exit / initialize movement-stop" style="html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=30;dashed=0;fillColor=#B3C5D0;fontColor=#000000;strokeColor=#000000;fontFamily=TeX Gyre Termes;shadow=0;glass=0;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="280" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" style="edgeStyle=none;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.487;entryY=-0.028;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#000000;strokeWidth=2;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=none;endFill=0;" parent="1" source="4" target="66" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="530"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="77" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;fontSize=9;fontFamily=TeX Gyre Termes;strokeColor=#000000;fontColor=#000000;strokeWidth=2;endFill=1;" edge="1" parent="1" source="4" target="75">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="620" y="470"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;COLLISION&lt;/font&gt;&lt;/b&gt;&lt;b style=&quot;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;entry / reduce one live&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;do / invulnerability effect&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;exit / end invulnerability effect&lt;/span&gt;" style="html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=30;dashed=0;fillColor=#B3C5D0;fontColor=#000000;strokeColor=#000000;fontFamily=TeX Gyre Termes;whiteSpace=wrap;shadow=0;glass=0;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="440" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=20;fontColor=#000000;strokeWidth=2;" parent="1" source="5" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;DESTROYED&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;br&gt;entry / destruction effect&lt;br&gt;do / visual explosion effect&lt;br&gt;exit / transition to end-screeen" style="html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=30;dashed=0;fillColor=#B3C5D0;fontColor=#000000;strokeColor=#000000;fontFamily=TeX Gyre Termes;shadow=0;glass=0;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="600" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=20;fontColor=#000000;strokeWidth=2;" parent="1" source="6" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="ellipse;fillColor=strokeColor;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="40" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#131010;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="760" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=classic;endFill=1;strokeWidth=2;" parent="1" source="27" target="33" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="150" y="370"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;hitting obstacle&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;rotation=0;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="165" y="360" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=none;html=1;entryX=0.003;entryY=0.509;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=10;fontColor=#000000;endArrow=none;endFill=0;strokeWidth=2;" parent="1" source="33" target="38" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="150" y="660"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="44" style="edgeStyle=none;html=1;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=10;fontColor=#000000;endArrow=none;endFill=0;strokeWidth=2;" parent="1" source="33" target="42" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="ellipse;fillColor=strokeColor;shadow=0;glass=0;sketch=0;strokeColor=#131010;fontFamily=TeX Gyre Termes;fontSize=10;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="490" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=10;fontColor=#000000;endArrow=none;endFill=0;" parent="1" source="33" target="33" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=10;fontColor=#000000;endArrow=classic;endFill=1;strokeWidth=2;" parent="1" source="38" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="lives = 0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="180" y="650" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=none;html=1;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=10;fontColor=#000000;endArrow=classic;endFill=1;strokeWidth=2;" parent="1" source="42" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="lives &amp;gt; 0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="180" y="490" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" style="edgeStyle=none;html=1;entryX=0.003;entryY=0.162;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#000000;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=classic;endFill=1;strokeWidth=2;" parent="1" source="54" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;b&gt;no input&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;rotation=0;" parent="1" vertex="1">
+                    <mxGeometry x="185" y="130" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=classic;endFill=1;" parent="1" source="59" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="&lt;span style=&quot;font-size: 9px;&quot;&gt;player input (w,a,s,d)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="510" y="250" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=classic;endFill=1;" parent="1" source="66" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="660"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="lives = 0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="535" y="565" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" style="edgeStyle=none;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#000000;strokeWidth=2;fontFamily=TeX Gyre Termes;fontSize=9;fontColor=#000000;endArrow=classic;endFill=1;" parent="1" source="69" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="250" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="69" value="&lt;span style=&quot;font-size: 9px;&quot;&gt;no player input&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="210" y="250" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#131010;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="40" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" style="edgeStyle=none;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontSize=9;fontFamily=TeX Gyre Termes;strokeColor=#000000;fontColor=#000000;strokeWidth=2;endFill=1;" edge="1" parent="1" source="75" target="2">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="620" y="150"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="75" value="&lt;span style=&quot;font-size: 9px;&quot;&gt;invul. effect is over&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontFamily=TeX Gyre Termes;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="570" y="300" width="100" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
