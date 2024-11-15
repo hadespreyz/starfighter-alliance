@@ -32,6 +32,8 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{colortbl}
+\usepackage{float}
+
 \tcbuselibrary{skins}
 
 
@@ -104,7 +106,7 @@
 
 \fancyfoot[L]{Alhasan Ramadan}
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
-\fancyfoot[R]{v.1.0.0}
+\fancyfoot[R]{v.2.0.6}
 
 \renewcommand{\headrulewidth}{0.8pt} % Linie unter der Kopfzeile
 \renewcommand{\footrulewidth}{0.8pt} % Linie über der Fußzeile
@@ -359,5 +361,73 @@ Fehlers abgebrochen werden.}{Dies soll dem Spieler / der Spielerin ein gutes Spi
     	\NFA{Schäden beim Verlieren eines Lebens}{Das Raumschiff wird beschädigt und zeigt sichtbare Veränderungen wie brennende Stellen.}{Diese Funktion betrifft nur die visuelle Darstellung der Spielfigur und nicht die zugrunde liegende Spielmechanik.}{-}{Möglicherweise zusätzliche Performance-Anforderungen durch Schadensdarstellung.}
     	
     	\NFA{Geheimfunktionen in der Read.me}{Bestimmte Code-Funktionen, wie "Order 66" oder "Starkiller", sind nur in der Read.me des Spiels dokumentiert.}{Diese Funktionen sind optionale Spielmechaniken, die nicht die grundlegende Spielsteuerung betreffen, sondern lediglich zusätzliche Inhalte darstellen}{-}{Niemand findet die}
+    	
+    	
+    	\newpage
+    	\section{Systemstruktur}
+    	Die Systemstruktur beschreibt die wesentlichen Komponenten und deren Interaktionen innerhalb des Spiels. In diesem Kapitel wird die Architektur des Spiels im Detail dargestellt, um einen Überblick über die verschiedenen Systembestandteile und ihre Zusammenarbeit zu geben. Es wird gezeigt, wie die einzelnen Module – von der Benutzeroberfläche bis hin zu den Spiellogiken – in ein funktionierendes System integriert werden. Dabei wird auf die Struktur und Organisation der Hauptkomponenten, sowie auf die Kommunikationsflüsse zwischen ihnen eingegangen.
+    	
+    	\subsection{Zustandsdiagramme}
+    	In diesem Abschnitt werden die Zustandsdiagramme für Starfighter Alliance vorgestellt. Sie zeigen die verschiedenen Phasen des Spiels und die Übergänge zwischen den Zuständen. Eine detaillierte Beschreibung der Diagramme folgt.
+
+\subsubsection{Screens}    	
+Das Diagramm beginnt mit dem Starten der Anwendung, wodurch der erste Zustand, der Start-Screen, aktiviert wird. Dieser Zustand ist in die Unterzustände Start und Settings unterteilt. Im Start-Zustand erfolgt die Initialisierung der Tasten (Entry), und die Hauptfunktion wartet auf die Eingabe des Spielers (Do). Der Spieler hat drei Optionen: den Exit-Button drücken, um die Anwendung zu verlassen, den Settings-Button, um in den Settings-Zustand zu wechseln.
+Im Settings-Zustand wird beim Eintritt die Initialisierung der Einstellungen vorgenommen (Entry), die Do-Funktion zeigt alle Optionen an, und beim Verlassen (Exit) werden die Eingaben des Spielers gespeichert. Der Spieler kann zurück zum Start-Zustand oder zum nächsten Zustand über den Start-Button wechseln.
+Im Selection-Zustand werden alle Raumschiffe angezeigt (Entry: Show all spaceships), und die Do-Funktion wartet auf die Eingabe des Spielers. Drückt der Spieler den Back-Button, geht es zurück zum Start-Screen. Wählt der Spieler ein Raumschiff, wird die Konfiguration gespeichert (Exit: Save player config) und der Übergang zum Game-Screen erfolgt.
+Im Game-Screen-Zustand startet der Countdown-Zustand (Entry: Start Timer), wartet auf den Timer (Do: Wait for timer) und spielt das Startgeräusch ab (Exit: Play start sound). Während des Countdowns gibt es zwei Optionen: Drückt der Spieler den Pause-Button, wechselt der Zustand in den Pause-Zustand (Entry: Initialize buttons, Do: Wait for player input), und nach Drücken des Back-Buttons geht es zurück zum Countdown, wenn dieser noch nicht abgelaufen ist. Ist der Countdown vorbei, geht es in den Run-Zustand. Sobald der Countdown abläuft, geht es automatisch in den Run-Zustand.
+Im Run-Zustand sind vier Subzustände aktiv, die in den nächsten Kapiteln detailliert beschrieben werden. Die Do-Funktion zeigt die Spielstatistiken an (Show stats). Die Abbruchbedingungen für alle Subzustände sind der Pause-Button oder die Zerstörung des Raumschiffs, was zum End-Screen führt. Im End-Screen-Zustand wird der Punktestand gespeichert (Exit), und der Highscore wird angezeigt (Do). Der Spieler kann entweder den Restart-Button drücken, um zurück zum Selection-Screen zu wechseln, oder die Anwendung über den Exit-Button verlassen.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{../../../images/Pflichtenheft_Assets/uml-state-diagram/screens-state-diagram.png}\\
+	\caption{screens-state-diagram.png}
+\end{figure}
+
+\newpage
+\subsubsection{Spaceship}
+Das Diagramm beschreibt die Zustände des Raumschiffs im Spiel.
+Zu Beginn befindet sich das Raumschiff im Zustand Idle, welcher als Ruhemodus fungiert. Beim Eintritt (Entry) wird die Animation auf „Warten“ gesetzt, die Do-Funktion wartet auf eine Eingabe des Spielers, und beim Verlassen (Exit) wird die Bewegungsrichtung initialisiert. Solange keine Eingabe erfolgt, bleibt das Raumschiff im Idle-Zustand. Erfolgt jedoch ein Spielerinput (z. B. durch die Tasten W, A, S oder D), wechselt es in den Moving-Zustand.
+Im Moving-Zustand wird beim Eintritt die Bewegungsanimation gestartet, die Do-Funktion sorgt für die kontinuierliche Bewegung des Raumschiffs, und beim Verlassen wird die Bewegung gestoppt. Hört der Spielerinput auf, wechselt das Raumschiff zurück in den Idle-Zustand.
+Trifft das Raumschiff in einem der Zustände (Idle oder Moving) auf ein Hindernis, wird der Übergang abhängig von der verbleibenden Lebensanzahl gewählt. Sind die Leben auf 0 gesunken, wechselt das Raumschiff in den Destroyed-Zustand. In diesem Zustand wird beim Eintritt ein Zerstörungseffekt ausgelöst, die Do-Funktion zeigt eine visuelle Explosion, und beim Verlassen erfolgt der Übergang zum End-Screen.
+Wenn noch Leben übrig sind, wechselt das Raumschiff in den Collision-Zustand. Beim Eintritt wird ein Leben abgezogen, die Do-Funktion aktiviert einen Unverwundbarkeitseffekt, und beim Verlassen endet dieser Effekt. Zur Sicherheit wird in diesem Zustand erneut geprüft, ob die Lebensanzahl tatsächlich nicht auf 0 gefallen ist. Nach Ablauf des Unverwundbarkeitseffekts kehrt das Raumschiff in den Idle-Zustand zurück.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.55\textwidth]{../../../images/Pflichtenheft_Assets/uml-state-diagram/spaceship-state-diagram.png}\\
+	\caption{spaceship-state-diagram.png}
+\end{figure}
+
+\newpage
+\subsubsection{Shot}
+Im Idle-Zustand wartet das System auf die Eingabe des Spielers (do: waiting for player input). Bei einem Tastendruck auf die Leertaste aktiviert sich die Schussmechanik, wodurch die Zustände Cooldown und Flight gleichzeitig eintreten.
+Im Cooldown-Zustand startet ein Timer (entry: start Timer), und während der Laufzeit des Timers kann kein weiterer Schuss abgegeben werden (do: waiting for timer). Sobald der Timer abgelaufen ist, wechselt das System zurück in den Idle-Zustand.
+Im Flight-Zustand wird die Bewegung des Schusses gestartet (entry: start moving animation) und währenddessen kontinuierlich fortgesetzt (do: constant shot movement). Verlässt der Schuss den Bildschirm, wird ebenfalls zum Idle-Zustand gewechselt. Trifft der Schuss jedoch ein Hindernis, erfolgt ein Wechsel in den Impact-Zustand mit einer Reduktion der Lebenspunkte des Hindernisses (entry: reduce obstacle life) und der Darstellung der Einschlag-Animation (do: impact animation). Nach Abschluss der Animation kehrt das System in den Idle-Zustand zurück.
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{../../../images/Pflichtenheft_Assets/uml-state-diagram/shots-state-diagram.png}\\
+	\caption{shots-state-diagram.png}
+\end{figure}
+
+\newpage
+\subsubsection{Wave}
+Wir beginnen im Idle-Zustand, der fortlaufend auf den Start einer neuen Welle prüft (do: check for new wave). Mit Beginn einer Welle wechselt das System in den Initialization-Zustand (entry: set starting positions der Hindernisse, abhängig vom Abstand) und startet die Erzeugung aller Hindernisse (do: initialize obstacles). Sobald alle Hindernisse bereit sind, wechselt das System in den Active-Zustand, wo die Hindernisbewegung eingeleitet wird (entry: start obstacle motion) und ein kontinuierlicher Abwärtsbewegungsprozess läuft (do: constant downward obstacle movement), wodurch die Welle aktiv dargestellt wird.
+Falls das Raumschiff zerstört wird, kehrt das System in den Idle-Zustand zurück oder verlässt das Diagramm. Sobald alle Hindernisse den Bildschirm verlassen haben, wechselt das System in den Cooldown-Zustand, in dem ein Timer für die nächste Welle gestartet wird (entry: start timer for next wave, do: waiting for timer). Bei Ablauf des Timers wechselt das System zurück in den Idle-Zustand.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{../../../images/Pflichtenheft_Assets/uml-state-diagram/wave-state-diagram.png}\\
+	\caption{wave-state-diagram.png}
+\end{figure}
+
+\newpage
+\subsubsection{Obstacle}
+Wenn eine Welle startet, beginnt das Hindernis im Moving-Zustand, in dem die Bewegungsanimation startet (Entry: starting movement animation) und die konstante Bewegung erfolgt (Do: constant obstacle movement).
+Wird das Hindernis getroffen, gilt: Hat es keine Leben mehr, wechselt es in den Destroyed-Zustand mit Zerstörungseffekt (Entry: destruction effect), visueller Explosion (Do: visual explosion effect) und Übergang zum End-Screen beim Verlassen. Hat das Hindernis noch Leben, wechselt es in den Collision-Modus, in dem ein Leben abgezogen (Entry: reduce one life) und eine Aufprall-Animation gezeigt wird (Do: impact animation). Danach wird erneut geprüft: Ist das Leben auf 0, wechselt es in den Destroyed-Zustand, andernfalls kehrt es in den Moving-Zustand zurück.
+Verlässt das Hindernis im Moving-Zustand den Bildschirm, erfolgt ebenfalls der Übergang in den Destroyed-Zustand.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../../images/Pflichtenheft_Assets/uml-state-diagram/obstacle-state-diagram.png}\\
+	\caption{obstacle-state-diagram.png}
+\end{figure}
+
+\newpage
+	\subsection{Klassendiagramme}
 
 \end{document}
