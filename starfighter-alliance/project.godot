@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Starfighter Alliance"
+config/description="Alhasan Ramadans Umsetzung vom Einzelprojekt"
+config/version="1.0.0"
+run/main_scene="res://scenes/start_screen.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://assets/star-wars-science-fiction-x-wing-minimalizm-istrebitel.jpg"
+config/icon="res://assets/xwing_ai.png"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Starfighter Alliance"

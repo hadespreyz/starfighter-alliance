@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkfm5ysj42sw4"]
+
+[ext_resource type="Texture2D" uid="uid://bis8xf41h8kpy" path="res://assets/themes/star_wars_menu_panel_v2.png" id="1_jfa1g"]
+[ext_resource type="Shader" path="res://scenes/scroll.gdshader" id="1_od8uy"]
+[ext_resource type="Texture2D" uid="uid://uq3oojt8qok6" path="res://assets/themes/Space Background (3).png" id="2_u4ncc"]
+[ext_resource type="FontFile" uid="uid://cg8o7wjtfh2qy" path="res://assets/fonts/Starjedi.ttf" id="2_yemde"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qp3ok"]
+shader = ExtResource("1_od8uy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xo7y1"]
+texture = ExtResource("1_jfa1g")
+region_rect = Rect2(15, 31, 994, 978)
+
+[sub_resource type="Theme" id="Theme_us7g5"]
+Panel/styles/panel = SubResource("StyleBoxTexture_xo7y1")
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="single_background_start" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_right = -0.1521
+offset_bottom = -1.0
+color = Color(0, 0, 0, 1)
+
+[node name="nebula_texture" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qp3ok")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 6.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u4ncc")
+
+[node name="start_menu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.258
+anchor_top = 0.068
+anchor_right = 0.714
+anchor_bottom = 0.722
+offset_left = -0.216003
+offset_top = -0.064003
+offset_right = -0.528076
+offset_bottom = 134.144
+theme = SubResource("Theme_us7g5")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.313
+anchor_top = 0.153
+anchor_right = 0.685
+anchor_bottom = 0.238
+offset_left = 0.423981
+offset_top = -0.144005
+offset_right = -0.120117
+offset_bottom = -0.223999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_yemde")
+theme_override_font_sizes/font_size = 32
+text = "Starfighter Alliance"
+horizontal_alignment = 1
