@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkfm5ysj42sw4"]
+[gd_scene load_steps=15 format=3 uid="uid://bkfm5ysj42sw4"]
 
+[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_8jwya"]
 [ext_resource type="Texture2D" uid="uid://bis8xf41h8kpy" path="res://assets/themes/star_wars_menu_panel_v2.png" id="1_jfa1g"]
 [ext_resource type="Shader" path="res://scenes/scroll.gdshader" id="1_od8uy"]
 [ext_resource type="Texture2D" uid="uid://uq3oojt8qok6" path="res://assets/themes/Space Background (3).png" id="2_u4ncc"]
@@ -42,6 +43,7 @@ offset_right = -1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8jwya")
 
 [node name="single_background_start" type="ColorRect" parent="."]
 layout_mode = 1
@@ -71,13 +73,15 @@ texture = ExtResource("2_u4ncc")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.258
-anchor_top = 0.068
+anchor_top = 0.0896049
 anchor_right = 0.714
-anchor_bottom = 0.722
+anchor_bottom = 0.700395
 offset_left = -0.216003
 offset_top = -0.064003
 offset_right = -0.528076
 offset_bottom = 134.144
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_us7g5")
 
 [node name="labels" type="Node" parent="."]
@@ -93,7 +97,6 @@ offset_top = 0.855995
 offset_right = -1.12012
 offset_bottom = 0.776001
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_yemde")
 theme_override_font_sizes/font_size = 32
@@ -107,10 +110,10 @@ anchor_left = 1.703
 anchor_top = 9.436
 anchor_right = 1.841
 anchor_bottom = 9.909
-offset_left = 0.11615
+offset_left = 0.116211
 offset_top = 0.0198975
-offset_right = 0.052124
-offset_bottom = 0.00488281
+offset_right = 0.052002
+offset_bottom = 1.42389
 theme_override_fonts/font = ExtResource("7_lmr0f")
 text = "v.1.0.1"
 
@@ -175,8 +178,25 @@ offset_left = -1.04004
 offset_top = 1.04797
 offset_right = -1.24805
 offset_bottom = 1.09595
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("5_jqgb1")
 text = "Beenden"
 script = ExtResource("6_i7vpp")
 
+[node name="start_button" type="Button" parent="buttons"]
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.42
+anchor_right = 0.575
+anchor_bottom = 0.494
+offset_left = -0.192017
+offset_top = -0.160004
+offset_right = -0.400024
+offset_bottom = -0.11203
+theme = ExtResource("5_jqgb1")
+text = "Start"
+
 [connection signal="pressed" from="buttons/quit_button" to="buttons/quit_button" method="_on_pressed"]
+[connection signal="pressed" from="buttons/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="buttons/start_button" to="buttons/start_button" method="_on_pressed"]

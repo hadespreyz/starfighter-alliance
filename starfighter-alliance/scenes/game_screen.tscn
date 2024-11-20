@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://5201at4lqndt"]
+
+[node name="GameScreen" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Node"]
+anchors_preset = -1
+anchor_left = 0.258
+anchor_top = 0.265
+anchor_right = 0.755
+anchor_bottom = 0.738
+offset_left = -0.216003
+offset_top = 0.279984
+offset_right = -80.7601
+offset_bottom = -0.22403
+scale = Vector2(1.165, 1)
+size_flags_stretch_ratio = 7.25
+text = "Game Screen"
