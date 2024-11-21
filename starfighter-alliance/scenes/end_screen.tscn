@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cetcttmkctqkj"]
+
+[ext_resource type="Texture2D" uid="uid://b6c6u5dpaxffy" path="res://assets/themes/endscreen.png" id="1_vnbhf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="single_background_start" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_right = -0.1521
+offset_bottom = -1.0
+color = Color(0, 0, 0, 1)
+
+[node name="nebula_texture" type="TextureRect" parent="."]
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vnbhf")
+stretch_mode = 6

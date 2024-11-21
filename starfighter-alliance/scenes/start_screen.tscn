@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bkfm5ysj42sw4"]
 
-[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_8jwya"]
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="1_8jwya"]
 [ext_resource type="Texture2D" uid="uid://bis8xf41h8kpy" path="res://assets/themes/star_wars_menu_panel_v2.png" id="1_jfa1g"]
 [ext_resource type="Shader" path="res://scenes/scroll.gdshader" id="1_od8uy"]
 [ext_resource type="Texture2D" uid="uid://uq3oojt8qok6" path="res://assets/themes/Space Background (3).png" id="2_u4ncc"]
@@ -45,7 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8jwya")
 
-[node name="single_background_start" type="ColorRect" parent="."]
+[node name="single_background_black" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.001
@@ -61,30 +61,44 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -7.0
-offset_top = -7.0
-offset_right = 6.0
-offset_bottom = 5.0
+offset_left = -560.0
+offset_top = -17.0
+offset_right = 527.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_u4ncc")
+stretch_mode = 6
 
 [node name="start_menu" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.258
-anchor_top = 0.0896049
-anchor_right = 0.714
-anchor_bottom = 0.700395
-offset_left = -0.216003
-offset_top = -0.064003
-offset_right = -0.528076
-offset_bottom = 134.144
+anchor_left = 0.302
+anchor_top = 0.118
+anchor_right = 0.67
+anchor_bottom = 0.779
+offset_left = 0.159973
+offset_top = -0.44001
+offset_right = -0.400024
+offset_bottom = -0.320068
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_us7g5")
 
 [node name="labels" type="Node" parent="."]
+
+[node name="version" type="Label" parent="labels"]
+anchors_preset = -1
+anchor_left = 1.703
+anchor_top = 9.436
+anchor_right = 1.841
+anchor_bottom = 9.909
+offset_left = -1453.84
+offset_top = -9159.29
+offset_right = -1453.9
+offset_bottom = -9157.89
+theme_override_fonts/font = ExtResource("7_lmr0f")
+text = "v.1.0.1"
 
 [node name="title" type="Label" parent="labels"]
 anchors_preset = -1
@@ -92,30 +106,16 @@ anchor_left = 0.313
 anchor_top = 0.153
 anchor_right = 0.685
 anchor_bottom = 0.238
-offset_left = -0.576019
-offset_top = 0.855995
-offset_right = -1.12012
-offset_bottom = 0.776001
+offset_left = -54.96
+offset_top = 28.76
+offset_right = 43.8
+offset_bottom = 39.96
 grow_horizontal = 2
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_yemde")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 44
 text = "Starfighter Alliance"
 horizontal_alignment = 1
-
-[node name="version" type="Label" parent="labels/title"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.703
-anchor_top = 9.436
-anchor_right = 1.841
-anchor_bottom = 9.909
-offset_left = 0.116211
-offset_top = 0.0198975
-offset_right = 0.052002
-offset_bottom = 1.42389
-theme_override_fonts/font = ExtResource("7_lmr0f")
-text = "v.1.0.1"
 
 [node name="logos" type="Node" parent="."]
 
@@ -174,13 +174,14 @@ anchor_left = 0.395
 anchor_top = 0.699
 anchor_right = 0.574
 anchor_bottom = 0.773
-offset_left = -1.04004
-offset_top = 1.04797
-offset_right = -1.24805
-offset_bottom = 1.09595
+offset_left = 5.59998
+offset_top = -209.92
+offset_right = 5.39197
+offset_bottom = -209.872
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_jqgb1")
+theme_override_font_sizes/font_size = 32
 text = "Beenden"
 script = ExtResource("6_i7vpp")
 
@@ -195,6 +196,7 @@ offset_top = -0.160004
 offset_right = -0.400024
 offset_bottom = -0.11203
 theme = ExtResource("5_jqgb1")
+theme_override_font_sizes/font_size = 32
 text = "Start"
 
 [connection signal="pressed" from="buttons/quit_button" to="buttons/quit_button" method="_on_pressed"]
