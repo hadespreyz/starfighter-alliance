@@ -30,7 +30,8 @@ script = ExtResource("1_gsrcc")
 
 [node name="x-wing" parent="." instance=ExtResource("1_mj7oh")]
 z_index = 1
-position = Vector2(964, 978)
+position = Vector2(962, 996)
+scale = Vector2(1.65, 1.65)
 
 [node name="background_game" type="Node" parent="."]
 
