@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://5201at4lqndt"]
+[gd_scene load_steps=12 format=3 uid="uid://5201at4lqndt"]
 
 [ext_resource type="Shader" path="res://scenes/verticalscroll.gdshader" id="1_chi2y"]
 [ext_resource type="Script" path="res://scripts/game_screen.gd" id="1_gsrcc"]
 [ext_resource type="PackedScene" uid="uid://c45yshfpwq7cn" path="res://scenes/x_wing.tscn" id="1_mj7oh"]
 [ext_resource type="Texture2D" uid="uid://2xv6c6h3q1ah" path="res://assets/themes/Space Background_gold.png" id="2_fo60d"]
+[ext_resource type="Theme" uid="uid://jsrwbr6wnx88" path="res://assets/themes/star_wars_button.theme" id="5_nq885"]
+[ext_resource type="Script" path="res://scripts/end_screen_button.gd" id="6_tf4e7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aonf2"]
 normal = Vector2(0, 1)
@@ -72,3 +74,23 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_fo60d")
 stretch_mode = 6
+
+[node name="end_screen_button" type="Button" parent="."]
+z_index = 3
+anchors_preset = -1
+anchor_left = 0.395
+anchor_top = 0.699
+anchor_right = 0.574
+anchor_bottom = 0.773
+offset_left = 1684.0
+offset_top = 18.0
+offset_right = 1914.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_nq885")
+theme_override_font_sizes/font_size = 27
+text = "END SCreen"
+script = ExtResource("6_tf4e7")
+
+[connection signal="pressed" from="end_screen_button" to="end_screen_button" method="_on_pressed"]
