@@ -1,15 +1,11 @@
-extends Node2D
+extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
 var release = false
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("moveRight"):
 		animated_sprite_2d.play("tilt_right")
 		release = false
@@ -31,3 +27,19 @@ func _process(_delta: float) -> void:
 	elif release and not animated_sprite_2d.is_playing():
 		animated_sprite_2d.play("idle")
 		release = false
+
+func _physics_process(delta: float) -> void:
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction_x := Input.get_axis("moveLeft", "moveRight")
+	var direction_y := Input.get_axis("moveDown", "moveUp")
+	if direction_x != 0:
+		velocity.x = direction_x * SPEED
+	else:
+		velocity.x = lerp(velocity.x, 0.0, 0.1)
+	if direction_y != 0:
+		velocity.y = - direction_y * SPEED
+	else:
+		velocity.y = lerp(velocity.y, 0.0, 0.1)
+
+	move_and_slide()

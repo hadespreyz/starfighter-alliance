@@ -1,11 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://c45yshfpwq7cn"]
+[gd_scene load_steps=33 format=3 uid="uid://c45yshfpwq7cn"]
 
 [ext_resource type="Script" path="res://scripts/x_wing.gd" id="1_blneg"]
 [ext_resource type="Texture2D" uid="uid://bkewuaqp6udo7" path="res://assets/sprites/x-wing-pixel-trans-Sheet.png" id="1_e1aqt"]
 [ext_resource type="Texture2D" uid="uid://c6x8f47kbg2ef" path="res://assets/sprites/x-wing-pixel-trans.png" id="1_xnfx3"]
 [ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="4_gik0s"]
-[ext_resource type="Script" path="res://scripts/move_component.gd" id="5_ih3ca"]
-[ext_resource type="Script" path="res://scripts/move_input_component.gd" id="6_mlbdv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a7hrp"]
 atlas = ExtResource("1_e1aqt")
@@ -234,20 +232,14 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="x-wing" type="Node2D"]
+[node name="x-wing" type="CharacterBody2D"]
 script = ExtResource("1_blneg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1, -63, 5, -58, 50, -29, 56, 16, 54, 28, 13, 47, -15, 47, -54, 26, -55, 15, -51, -31, -4, -59, 0, -64)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4w6bu")
-animation = &"backtilt_leftToIdle"
+animation = &"idle"
 autoplay = "idle"
 script = ExtResource("4_gik0s")
-
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("5_ih3ca")
-actor = NodePath("..")
-velocity = Vector2(0, -50)
-
-[node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("move_component")]
-script = ExtResource("6_mlbdv")
-move_component = NodePath("../MoveComponent")

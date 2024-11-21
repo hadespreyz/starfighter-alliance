@@ -1,36 +1,74 @@
-[gd_scene load_steps=5 format=3 uid="uid://5201at4lqndt"]
+[gd_scene load_steps=10 format=3 uid="uid://5201at4lqndt"]
 
 [ext_resource type="Shader" path="res://scenes/verticalscroll.gdshader" id="1_chi2y"]
+[ext_resource type="Script" path="res://scripts/game_screen.gd" id="1_gsrcc"]
 [ext_resource type="PackedScene" uid="uid://c45yshfpwq7cn" path="res://scenes/x_wing.tscn" id="1_mj7oh"]
 [ext_resource type="Texture2D" uid="uid://2xv6c6h3q1ah" path="res://assets/themes/Space Background_gold.png" id="2_fo60d"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aonf2"]
+normal = Vector2(0, 1)
+distance = 4.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_euft3"]
+normal = Vector2(-1, 0)
+distance = -46.7689
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e0l2o"]
+normal = Vector2(1, 0)
+distance = -40.008
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fk0vx"]
+distance = -159.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eqsee"]
 shader = ExtResource("1_chi2y")
 
 [node name="GameScreen" type="Node2D"]
+script = ExtResource("1_gsrcc")
 
 [node name="x-wing" parent="." instance=ExtResource("1_mj7oh")]
 z_index = 1
-position = Vector2(579, 579)
+position = Vector2(964, 978)
 
 [node name="background_game" type="Node" parent="."]
 
-[node name="single_background_start" type="ColorRect" parent="background_game"]
+[node name="single_background_black" type="ColorRect" parent="background_game"]
 anchors_preset = -1
 anchor_right = 1.001
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
-[node name="nebula_texture" type="TextureRect" parent="background_game/single_background_start"]
+[node name="StaticBody2D" type="StaticBody2D" parent="background_game/single_background_black"]
+z_index = 2
+position = Vector2(-211, 889)
+
+[node name="barrier_top" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+position = Vector2(303, -891)
+shape = SubResource("WorldBoundaryShape2D_aonf2")
+
+[node name="barrier_right" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+position = Vector2(2085, -367)
+shape = SubResource("WorldBoundaryShape2D_euft3")
+
+[node name="barrier_left" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+position = Vector2(253, -753)
+shape = SubResource("WorldBoundaryShape2D_e0l2o")
+
+[node name="barrier_bottom" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+position = Vector2(955, 34)
+shape = SubResource("WorldBoundaryShape2D_fk0vx")
+
+[node name="nebula_texture" type="TextureRect" parent="background_game/single_background_black"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_eqsee")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1587.0
-offset_right = 1.0
-offset_bottom = 765.0
+offset_top = -996.0
+offset_right = 0.0799561
+offset_bottom = 924.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_fo60d")
+stretch_mode = 6
