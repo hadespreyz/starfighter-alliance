@@ -41,23 +41,23 @@ anchor_right = 1.001
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="background_game/single_background_black"]
+[node name="barrier_around" type="StaticBody2D" parent="background_game/single_background_black"]
 z_index = 2
 position = Vector2(-211, 889)
 
-[node name="barrier_top" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+[node name="barrier_top" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
 position = Vector2(303, -891)
 shape = SubResource("WorldBoundaryShape2D_aonf2")
 
-[node name="barrier_right" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+[node name="barrier_right" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
 position = Vector2(2085, -367)
 shape = SubResource("WorldBoundaryShape2D_euft3")
 
-[node name="barrier_left" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+[node name="barrier_left" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
 position = Vector2(253, -753)
 shape = SubResource("WorldBoundaryShape2D_e0l2o")
 
-[node name="barrier_bottom" type="CollisionShape2D" parent="background_game/single_background_black/StaticBody2D"]
+[node name="barrier_bottom" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
 position = Vector2(955, 34)
 shape = SubResource("WorldBoundaryShape2D_fk0vx")
 

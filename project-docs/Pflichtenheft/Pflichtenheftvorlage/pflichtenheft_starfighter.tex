@@ -201,6 +201,36 @@ Der Zweck dieses Dokuments ist es, eine detaillierte Beschreibung der Anforderun
 
 \newpage
 
+\subsection{Ansichten}
+
+Die Anwendung besteht aus mehreren Ansichten, sogenannten Screens, über welche Spielende mit dem Programm interagieren können.
+
+    \begin{tcolorbox}[
+        colframe=unilogo,           % Rahmenfarbe
+        colback=unilogo!10,         % Hintergrundfarbe der Box
+        boxrule=0.5pt,              % Dicke des Außenrahmens
+        left=2mm, right=2mm, top=1mm, bottom=1mm, % Innenabstand der Box
+        rounded corners=all,        % Alle Ecken abrunden
+    ]
+        \begin{tabularx}{\textwidth}{l|X}
+            \rowcolor{unilogo} \textbf{\textcolor{white}{SCREENS}} & \textbf{\textcolor{white}{BESCHREIBUNG}} \\
+            \hline
+            \textbf{Start-Screen} & Nach dem Start der Anwendung befindet sich der Spieler / die Spielerin im Start-Screen. Die Ansicht bietet Buttons zum Starten des Spiels, Laden einer Konfigurationsdatei und Beenden des Spiels. Zusätzlich werden die Logos der genutzten Programme angezeigt, die anklickbar sind und zur jeweiligen Website führen. Die aktuelle Version des Spiels wird ebenfalls sichtbar dargestellt. \\
+            \hline
+            \textbf{Selection-Screen} & Der Spaceship Screen ermöglicht es den Spielenden, ein Raumschiff auszuwählen. Eine Liste verfügbarer Raumschiffe wird angezeigt, jedes mit einem Vorschaubild sowie den Eigenschaften Geschwindigkeit und Schusskraft. Durch Anklicken eines Raumschiffs wird zum Game Screen gewechselt. \\
+            \hline
+            \textbf{Game-Screen} & Im Game-Screen wird das eigentliche Spiel dargestellt. Der Spieler / die Spielerin agiert hier, indem er das Raumschiff steuert und Hindernissen ausweicht. Der Weltraum, das Raumschiff und auftauchende Hindernisse sind sichtbar. Wichtige Informationen wie die Anzahl der überstandenen Wellen, gesammelte Punkte und verbleibende Leben werden stets angezeigt. Das Spiel kann mit einem Knopf über einen separaten Pause-Screen pausiert werden. \\ 
+            \hline
+            \textbf{Pause-Screen} & Der Pause-Screen zeigt einen verschwommenen Hintergrund und enthält mehrere Buttons: einen zum Schließen des Spiels, einen zum Beenden des Spiels und einen zum Fortsetzen des Spiels. Dieser Screen ermöglicht es den Spielenden, das Spiel zu pausieren und Einstellungen vorzunehmen.\\
+            \hline
+            \textbf{End-Screen} & Der End-Screen wird angezeigt, wenn das Spiel zu Ende ist. Er zeigt das Raumschiff, die Anzahl der überstandenen Wellen und die Punkteanzahl. Zudem werden die besten 10 Ergebnisse des Highscores angezeigt, der in einer separaten Datei gespeichert wird. Das aktuelle Ergebnis wird hervorgehoben, um anzuzeigen, ob der Spieler / die Spielerin unter den besten 10 liegt. Ein Button ermöglicht es, zum Start-Screen zurückzukehren, um das Spiel erneut zu spielen. \\
+        \end{tabularx}
+    \end{tcolorbox}
+    
+\subsection{Systemeinschränkungen und Abhängigkeiten}
+
+Die Anwendung wird durch die Prozessor- und/oder Grafikleistung des Systems begrenzt, auf dem es läuft. Um die Anwendung zu entwickeln, werden die Sprachen GDScript (1) und C\# (2) verwendet und in den Versionen \texttt{v4.3.stable.mono.official[77dcf97d8]} (1) und \texttt{.NET 6.0 / C\# 10.0} (2) benötigt. Später soll die Anwendung als Binary für Windows, Linux oder MacOS ausgeliefert werden (das spezifische System wird in Absprache mit dem Tutor / der Tutorin entschieden).
+
     \section{Spezifische Anforderungen}
 
   	Dieser Abschnitt enthält eine vollständige und detaillierte Auflistung sämtlicher spezifischer Anforderungen, die an das System gestellt werden. In 		diesem Zusammenhang wird eine gründliche Beschreibung des Systems sowie seiner verschiedenen Funktionen und Merkmale präsentiert. Alle wesentlichen 		Anforderungen werden klar und präzise formuliert, um sicherzustellen, dass das System den festgelegten Standards entspricht und alle gewünschten 			Leistungs- und Funktionsanforderungen erfüllt. Zudem werden hier die Interaktionen zwischen den verschiedenen Systemkomponenten und deren jeweilige 		Aufgaben beschrieben, um die Systemarchitektur vollständig zu verstehen.
@@ -321,7 +351,7 @@ internen Fehlers im Server.}{Diese Antwortstruktur stellt sicher, dass der Clien
     	\subsubsection{Rahmenbedingungen}
 
 	\NFA{Robustheit}{Die Anwendung darf nicht absturzen. Bei 100 Spielen darf maximal 1 Spiel aufgrund eines ¨
-Fehlers abgebrochen werden.}{Dies soll dem Spieler / der Spielerin ein gutes Spielerlebnis offenbaren.}{-A}{-}
+Fehlers abgebrochen werden.}{Dies soll dem Spieler / der Spielerin ein gutes Spielerlebnis offenbaren.}{-}{-}
 
 	\NFA{Lokales Spiel}{Die Anforderung setzt fest, dass das Spiel auf einem einzelnen Gerät laufen wird}{Diese Anforderung beeinflusst die 					Betriebsumgebung und Systemanforderungen, wirft also den technischen Aspekt des Projektes auf}{-}{-}
 	
@@ -331,7 +361,7 @@ Fehlers abgebrochen werden.}{Dies soll dem Spieler / der Spielerin ein gutes Spi
 
 	\NFA{Anwendung- und Implementierungssprache}{Die Anwendungssprache kann Deutsch oder Englisch sein. Die Implementierungssprache und 						Dokumentationssprache müssen auf Englisch sein.}{Dies bezieht sich auf die Sprachenstandards und Dokumentation, nicht auf die Funktionsweise des 			Spiels.}{-}{-}
 
-	\NFA{Entwicklungsumgebung}{Das Spiel wird in Godot entwickelt, und für die Grafiken werden Blender und Figma verwendet.}{-}{Mögliche Kompatibilitätsprobleme zwischen den Tools.}
+	\NFA{Entwicklungsumgebung}{Das Spiel wird in Godot entwickelt, und für die Grafiken werden Blender und Figma verwendet.}{-}{Mögliche Kompatibilitätsprobleme zwischen den Tools.}{-}
 	
 	
 	\NFA{Plattformkompatibilität}{Die Anwendung muss mindestens auf entweder Windows 10 bzw. 11, auf Linux oder MacOS laufen.}{Beschreibt unter einem 		technischen Aspekt die unterstützten Plattformen, ohne Auswirkungen auf das Spielverhalten zu haben.}{Kompatibilität mit NFA3, mögliche 						plattformspezifische Bibliotheken oder Systemanforderungen.}{Unterschiede bei der plattformübergreifenden Anpassung. Aufwand für neue Tests und 				Optimierungen.}
