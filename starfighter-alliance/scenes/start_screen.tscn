@@ -1,0 +1,205 @@
+[gd_scene load_steps=15 format=3 uid="uid://bkfm5ysj42sw4"]
+
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="1_8jwya"]
+[ext_resource type="Texture2D" uid="uid://bis8xf41h8kpy" path="res://assets/themes/star_wars_menu_panel_v2.png" id="1_jfa1g"]
+[ext_resource type="Shader" path="res://scenes/scroll.gdshader" id="1_od8uy"]
+[ext_resource type="Texture2D" uid="uid://uq3oojt8qok6" path="res://assets/themes/Space Background (3).png" id="2_u4ncc"]
+[ext_resource type="FontFile" uid="uid://cg8o7wjtfh2qy" path="res://assets/fonts/Starjedi.ttf" id="2_yemde"]
+[ext_resource type="Theme" uid="uid://jsrwbr6wnx88" path="res://assets/themes/star_wars_button.theme" id="5_jqgb1"]
+[ext_resource type="Script" path="res://scripts/quit_button.gd" id="6_i7vpp"]
+[ext_resource type="FontFile" uid="uid://bfjcr3om6i0le" path="res://assets/fonts/STJEDISE.TTF" id="7_lmr0f"]
+[ext_resource type="Texture2D" uid="uid://dd7gy5advrenv" path="res://assets/Logo_Aseprite.svg.png" id="8_jf7uc"]
+[ext_resource type="Texture2D" uid="uid://rejgw8vtjcjy" path="res://assets/Godot_icon.svg.png" id="8_k16hd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qp3ok"]
+shader = ExtResource("1_od8uy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xo7y1"]
+texture = ExtResource("1_jfa1g")
+region_rect = Rect2(15, 31, 994, 978)
+
+[sub_resource type="Theme" id="Theme_us7g5"]
+Panel/styles/panel = SubResource("StyleBoxTexture_xo7y1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t6n3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 11
+border_width_right = 6
+expand_margin_left = 4.0
+shadow_color = Color(0.992157, 1, 1, 1)
+shadow_size = 35
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8jwya")
+metadata/_edit_horizontal_guides_ = [-737.0]
+
+[node name="single_background_black" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_right = -0.1521
+offset_bottom = -1.0
+color = Color(0, 0, 0, 1)
+
+[node name="nebula_texture" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qp3ok")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -560.0
+offset_top = -17.0
+offset_right = 527.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u4ncc")
+stretch_mode = 6
+
+[node name="start_menu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.302
+anchor_top = 0.118
+anchor_right = 0.67
+anchor_bottom = 0.779
+offset_left = 0.159973
+offset_top = -0.44001
+offset_right = -0.400024
+offset_bottom = -0.320068
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_us7g5")
+
+[node name="labels" type="Node" parent="."]
+
+[node name="version" type="Label" parent="labels"]
+anchors_preset = -1
+anchor_left = 1.703
+anchor_top = 9.436
+anchor_right = 1.841
+anchor_bottom = 9.909
+offset_left = -1453.76
+offset_top = -9158.88
+offset_right = -1615.72
+offset_bottom = -9627.72
+theme_override_fonts/font = ExtResource("7_lmr0f")
+text = "v.1.0.1"
+
+[node name="title" type="Label" parent="labels"]
+anchors_preset = -1
+anchor_left = 0.313
+anchor_top = 0.153
+anchor_right = 0.685
+anchor_bottom = 0.238
+offset_left = -54.96
+offset_top = 28.76
+offset_right = 43.8
+offset_bottom = 39.96
+grow_horizontal = 2
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_yemde")
+theme_override_font_sizes/font_size = 44
+text = "Starfighter Alliance"
+horizontal_alignment = 1
+
+[node name="logos" type="Node" parent="."]
+
+[node name="godot_logo" type="TextureRect" parent="logos"]
+anchors_preset = -1
+anchor_left = 0.917
+anchor_top = 0.946
+anchor_right = 0.942
+anchor_bottom = 0.989
+offset_left = -1.38403
+offset_top = 0.992004
+offset_right = -1.18408
+offset_bottom = 1.12799
+texture = ExtResource("8_k16hd")
+expand_mode = 1
+
+[node name="LinkButton_godot" type="LinkButton" parent="logos/godot_logo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.964
+offset_bottom = 0.00799942
+grow_horizontal = 2
+grow_vertical = 2
+underline = 2
+uri = "https://godotengine.org/"
+
+[node name="aseprite_logo" type="TextureRect" parent="logos"]
+anchors_preset = -1
+anchor_left = 0.892
+anchor_top = 0.951
+anchor_right = 0.914
+anchor_bottom = 0.988
+offset_left = -0.583984
+offset_top = 0.751953
+offset_right = -0.927979
+offset_bottom = 0.776001
+texture = ExtResource("8_jf7uc")
+expand_mode = 1
+
+[node name="LinkButton_aseprite" type="LinkButton" parent="logos/aseprite_logo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_0t6n3")
+uri = "https://www.aseprite.org/"
+
+[node name="buttons" type="Node" parent="."]
+
+[node name="quit_button" type="Button" parent="buttons"]
+anchors_preset = -1
+anchor_left = 0.395
+anchor_top = 0.699
+anchor_right = 0.574
+anchor_bottom = 0.773
+offset_left = 5.59998
+offset_top = -209.92
+offset_right = 5.39197
+offset_bottom = -209.872
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_jqgb1")
+theme_override_font_sizes/font_size = 32
+text = "Beenden"
+script = ExtResource("6_i7vpp")
+
+[node name="start_button" type="Button" parent="buttons"]
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.42
+anchor_right = 0.575
+anchor_bottom = 0.494
+offset_left = -0.192017
+offset_top = -0.160004
+offset_right = -0.400024
+offset_bottom = -0.11203
+theme = ExtResource("5_jqgb1")
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[connection signal="pressed" from="buttons/quit_button" to="buttons/quit_button" method="_on_pressed"]
+[connection signal="pressed" from="buttons/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="buttons/start_button" to="buttons/start_button" method="_on_pressed"]
