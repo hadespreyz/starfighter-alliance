@@ -1,0 +1,47 @@
+# config.yml
+# Diese Datei konfiguriert, welche Issue-Templates zur Auswahl stehen.
+
+templates:
+  - name: "Bug Report (English)"
+    about: "Report a bug in the project"
+    labels: 
+      - bug
+    template: "bug_report_en.md"
+    
+  - name: "Fehlerbericht (Deutsch)"
+    about: "Melde einen Fehler im Projekt"
+    labels:
+      - bug
+    template: "bug_report_de.md"
+  
+  - name: "Feature Request (English)"
+    about: "Request a new feature for the project"
+    labels: 
+      - enhancement
+    template: "feature_request_en.md"
+  
+  - name: "Funktionsanfrage (Deutsch)"
+    about: "Fordere eine neue Funktion im Projekt an"
+    labels:
+      - enhancement
+    template: "feature_request_de.md"
+  
+  - name: "User Story (Deutsch)"
+    about: "Beschreibe ein Feature aus der Sicht eines Benutzers"
+    labels:
+      - feature
+    template: "user_story_de.md"
+  
+  - name: "User Story (English)"
+    about: "Describe a feature from a user's perspective"
+    labels:
+      - feature
+    template: "user_story_en.md"
+
+  - name: "User Story Beispiel (Deutsch)"
+    about: "Ein Beispiel für eine User Story"
+    template: "user_story_beispiel.md"
+  
+  - name: "User Story Example (English)"
+    about: "An example for a user story"
+    template: "user_story_example.md"
