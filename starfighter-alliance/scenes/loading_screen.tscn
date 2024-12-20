@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3kn4n2r3rveo"]
+
+[ext_resource type="Script" path="res://scripts/loading_screen.gd" id="1_7qis3"]
+[ext_resource type="Shader" path="res://assets/shader/pulse.gdshader" id="2_2ij46"]
+[ext_resource type="FontFile" uid="uid://cg8o7wjtfh2qy" path="res://assets/fonts/Starjedi.ttf" id="2_87ilw"]
+[ext_resource type="Texture2D" uid="uid://xiy5b88cdenq" path="res://assets/pictures/progressbar_over.png" id="3_jbag0"]
+[ext_resource type="Texture2D" uid="uid://fu00vslhme0b" path="res://assets/pictures/progressbar_inside.png" id="4_4reie"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gr3ea"]
+shader = ExtResource("2_2ij46")
+shader_parameter/shine_color = Color(0.592157, 0.929412, 0.792157, 1)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 1.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 1
+
+[node name="loading_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7qis3")
+
+[node name="loading" type="Label" parent="."]
+material = SubResource("ShaderMaterial_gr3ea")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -336.0
+offset_right = 336.0
+offset_bottom = 229.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_87ilw")
+theme_override_font_sizes/font_size = 143
+text = "Loading"
+
+[node name="percent" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -146.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_87ilw")
+theme_override_font_sizes/font_size = 91
+text = "100%"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(64, 64)
+value = 100.0
+texture_over = ExtResource("3_jbag0")
+texture_progress = ExtResource("4_4reie")

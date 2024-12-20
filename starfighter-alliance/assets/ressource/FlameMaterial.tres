@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b0w5x8ios2q3q"]
+
+[ext_resource type="Shader" path="res://assets/shader/flame.gdshader" id="1_hb5yk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8wnai"]
+
+[resource]
+shader = ExtResource("1_hb5yk")
+shader_parameter/offset_speed_multiplier = 2.0
+shader_parameter/flame_color = Color(0.525, 0.35, 0, 1)
+shader_parameter/bounds_size = Vector2(100, 100)
+shader_parameter/origin = null
+shader_parameter/core_flame_radius = 1.0
+shader_parameter/noise = SubResource("NoiseTexture2D_8wnai")

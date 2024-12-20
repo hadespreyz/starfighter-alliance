@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://dp8lxbfhuh5a5"]
+
+[ext_resource type="Script" path="res://scripts/asteroid.gd" id="1_36a35"]
+[ext_resource type="Texture2D" uid="uid://cdvy0wwg60i8i" path="res://assets/pictures/asteroid_obstacle1.png" id="1_elfx2"]
+[ext_resource type="PackedScene" uid="uid://lbwdpiuin8xx" path="res://scenes/explosion_meteor.tscn" id="2_xhhsh"]
+[ext_resource type="Texture2D" uid="uid://c7pcvdh4nk3c8" path="res://assets/pictures/asteroid4.png" id="4_kjign"]
+[ext_resource type="Script" path="res://scripts/rotate.gd" id="6_2xkh2"]
+[ext_resource type="AudioStream" uid="uid://bv7b4m2rq34wl" path="res://assets/soundeffects/debris-break-253779.mp3" id="7_cr3k1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4066"]
+size = Vector2(210, 173)
+
+[sub_resource type="Gradient" id="Gradient_282c3"]
+offsets = PackedFloat32Array(0, 0.480144, 1)
+colors = PackedColorArray(0.998862, 0.70914, 3.85046e-07, 1, 0.89363, 0.478969, 0.230633, 1, 0.63199, 0.0256471, 0.0142195, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_03smr"]
+gradient = SubResource("Gradient_282c3")
+
+[sub_resource type="Curve" id="Curve_0v61i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00271201), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8evt4"]
+curve = SubResource("Curve_0v61i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tn822"]
+particle_flag_disable_z = true
+angular_velocity_min = -104.23
+angular_velocity_max = 55.98
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+gravity = Vector3(0, -1000, 0)
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+damping_min = 1.608
+damping_max = 1.608
+scale_min = 0.0
+scale_max = 1.74
+scale_curve = SubResource("CurveTexture_8evt4")
+scale_over_velocity_max = 1000.0
+color_ramp = SubResource("GradientTexture1D_03smr")
+turbulence_enabled = true
+turbulence_noise_strength = 15.18
+turbulence_noise_scale = 0.0
+
+[node name="asteroid" type="Area2D"]
+z_index = 10
+position = Vector2(1066, 627)
+scale = Vector2(0.435, 0.435)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_36a35")
+meteor_effect = ExtResource("2_xhhsh")
+obstacle_size = Vector2(10, 10)
+
+[node name="AccelTimer" type="Timer" parent="."]
+wait_time = 1.923
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 21.5)
+shape = SubResource("RectangleShape2D_a4066")
+
+[node name="Rotate" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2606.9
+offset_top = -2834.48
+offset_right = 2393.1
+offset_bottom = 2165.52
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.08, 0.08)
+pivot_offset = Vector2(2611, 2850)
+texture = ExtResource("1_elfx2")
+script = ExtResource("6_2xkh2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Rotate"]
+modulate = Color(1, 1, 1, 0.216)
+z_index = 2
+position = Vector2(2903.49, 2185.1)
+scale = Vector2(151.693, 110.842)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(45.977, -75.8621)
+scale = Vector2(1.04166, 1.04166)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_tn822")
+texture = ExtResource("4_kjign")
+trail_lifetime = 10.0
+
+[node name="explosion_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cr3k1")
+volume_db = 10.024
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="Rotate/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

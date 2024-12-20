@@ -1,0 +1,259 @@
+[gd_scene load_steps=27 format=3 uid="uid://5201at4lqndt"]
+
+[ext_resource type="Shader" path="res://assets/shader/verticalscroll.gdshader" id="1_chi2y"]
+[ext_resource type="Script" path="res://scripts/game_screen.gd" id="1_gsrcc"]
+[ext_resource type="Texture2D" uid="uid://2xv6c6h3q1ah" path="res://assets/pictures/Space Background_gold.png" id="2_fo60d"]
+[ext_resource type="PackedScene" uid="uid://clj8wnywder78" path="res://scenes/life_icon.tscn" id="5_mlhxm"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="7_n2g56"]
+[ext_resource type="FontFile" uid="uid://cg8o7wjtfh2qy" path="res://assets/fonts/Starjedi.ttf" id="8_j5v0o"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="9_fvw34"]
+[ext_resource type="Texture2D" uid="uid://27wg1je6ycfk" path="res://assets/pictures/Pause_icon.png" id="10_ul6cs"]
+[ext_resource type="PackedScene" uid="uid://cv3o54tri4rnq" path="res://scenes/pause_screen.tscn" id="11_t5naq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aonf2"]
+normal = Vector2(0, 1)
+distance = 2.85709
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_euft3"]
+normal = Vector2(-1, 0)
+distance = -46.7689
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e0l2o"]
+normal = Vector2(1, 0)
+distance = -114.286
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fk0vx"]
+distance = -159.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eqsee"]
+shader = ExtResource("1_chi2y")
+
+[sub_resource type="Animation" id="Animation_37a2d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_crkko"]
+resource_name = "fade_out"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.1, 7),
+"transitions": PackedFloat32Array(1, 5.27803),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8xet"]
+_data = {
+"RESET": SubResource("Animation_37a2d"),
+"fade_out": SubResource("Animation_crkko")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rl25a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ac2r3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qg87i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4c0d4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_44pns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7fst"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfoek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alo62"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd8p4"]
+
+[node name="GameScreen" type="Node2D"]
+script = ExtResource("1_gsrcc")
+countdown_colour = Color(1, 0, 0, 1)
+original_countdown_colour = Color(1, 1, 1, 1)
+start_colour = Color(0, 1, 0, 1)
+
+[node name="background_game" type="Node" parent="."]
+
+[node name="single_background_black" type="ColorRect" parent="background_game"]
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -19.0
+offset_right = -33.0
+offset_bottom = -19.0
+scale = Vector2(1.05, 1.05)
+color = Color(0, 0, 0, 1)
+
+[node name="barrier_around" type="StaticBody2D" parent="background_game/single_background_black"]
+z_index = 2
+position = Vector2(-285.714, 851.429)
+collision_layer = 8
+
+[node name="barrier_top" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
+position = Vector2(1204.76, -835.239)
+shape = SubResource("WorldBoundaryShape2D_aonf2")
+
+[node name="barrier_right" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
+position = Vector2(2097.14, -279.048)
+shape = SubResource("WorldBoundaryShape2D_euft3")
+
+[node name="barrier_left" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
+position = Vector2(433.333, -334.286)
+shape = SubResource("WorldBoundaryShape2D_e0l2o")
+
+[node name="barrier_bottom" type="CollisionShape2D" parent="background_game/single_background_black/barrier_around"]
+position = Vector2(1209.52, 36.1904)
+shape = SubResource("WorldBoundaryShape2D_fk0vx")
+
+[node name="nebula_texture" type="TextureRect" parent="background_game/single_background_black"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_eqsee")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -996.191
+offset_right = 0.0799561
+offset_bottom = 923.809
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fo60d")
+stretch_mode = 6
+
+[node name="Player" type="CharacterBody2D" parent="."]
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("7_n2g56")
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("9_fvw34")
+
+[node name="HUD" type="Node" parent="."]
+
+[node name="LifeContainer" type="HBoxContainer" parent="HUD"]
+z_index = 20
+offset_right = 137.0
+offset_bottom = 32.0
+scale = Vector2(2.01, 2.01)
+theme_override_constants/separation = 5
+
+[node name="life_icon" parent="HUD/LifeContainer" instance=ExtResource("5_mlhxm")]
+layout_mode = 2
+
+[node name="life_icon2" parent="HUD/LifeContainer" instance=ExtResource("5_mlhxm")]
+layout_mode = 2
+
+[node name="score" type="Label" parent="HUD"]
+z_index = 20
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -82.0
+offset_right = 292.0
+offset_bottom = 7.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("8_j5v0o")
+theme_override_font_sizes/font_size = 55
+text = "Punkte: 0"
+
+[node name="wave" type="Label" parent="HUD"]
+z_index = 20
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -126.0
+offset_right = 363.0
+offset_bottom = -37.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("8_j5v0o")
+theme_override_font_sizes/font_size = 55
+text = "Welle: 0"
+
+[node name="countdown" type="Timer" parent="HUD"]
+wait_time = 6.0
+one_shot = true
+
+[node name="countdown_display" type="Label" parent="HUD"]
+z_index = 10
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -179.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_j5v0o")
+theme_override_font_sizes/font_size = 200
+text = "Bereit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/countdown_display"]
+libraries = {
+"": SubResource("AnimationLibrary_s8xet")
+}
+autoplay = "fade_out"
+
+[node name="pause" type="Button" parent="."]
+z_index = 10
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1849.0
+offset_top = 6.0
+offset_right = 1881.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rl25a")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ac2r3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qg87i")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4c0d4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_44pns")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_a7fst")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pfoek")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_alo62")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fd8p4")
+icon = ExtResource("10_ul6cs")
+
+[node name="pause_screen" parent="." instance=ExtResource("11_t5naq")]
+visible = false
+offset_left = 958.0
+offset_top = 513.0
+offset_right = 958.0
+offset_bottom = 513.0
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_button_pressed"]

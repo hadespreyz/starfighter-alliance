@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://lbwdpiuin8xx"]
+
+[ext_resource type="Texture2D" uid="uid://d1ay4x785gbn8" path="res://assets/pictures/asteroid1.png" id="1_f03gq"]
+[ext_resource type="Script" path="res://scripts/explosion_meteor.gd" id="2_y2dud"]
+
+[sub_resource type="Gradient" id="Gradient_qr4go"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jfcoe"]
+gradient = SubResource("Gradient_qr4go")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_neo5i"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 40.0
+spread = 176.0
+initial_velocity_max = 75.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.3
+scale_over_velocity_max = 29.49
+color_ramp = SubResource("GradientTexture1D_jfcoe")
+
+[node name="explosion_meteor" type="GPUParticles2D"]
+z_index = 5
+scale = Vector2(0.33, 0.33)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_neo5i")
+texture = ExtResource("1_f03gq")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("2_y2dud")

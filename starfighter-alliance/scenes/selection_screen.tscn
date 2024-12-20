@@ -1,0 +1,556 @@
+[gd_scene load_steps=37 format=3 uid="uid://cr5bm5rck2jbq"]
+
+[ext_resource type="Shader" path="res://assets/shader/scroll.gdshader" id="1_1laqr"]
+[ext_resource type="Texture2D" uid="uid://c6x8f47kbg2ef" path="res://assets/pictures/x-wing-pixel-trans.png" id="1_rukcs"]
+[ext_resource type="Script" path="res://scripts/selection_screen.gd" id="1_tdtgc"]
+[ext_resource type="Texture2D" uid="uid://uq3oojt8qok6" path="res://assets/pictures/Space Background (3).png" id="2_c2wm2"]
+[ext_resource type="PackedScene" uid="uid://c45yshfpwq7cn" path="res://scenes/x_wing.tscn" id="2_krwm1"]
+[ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="2_pfjmj"]
+[ext_resource type="StyleBox" uid="uid://be104xy6ta703" path="res://assets/themes/rounded_corners_focus.tres" id="2_v451v"]
+[ext_resource type="Script" path="res://scripts/rotate.gd" id="2_yfy3u"]
+[ext_resource type="PackedScene" uid="uid://d3efdof25hv62" path="res://scenes/millennium_falcon.tscn" id="3_44era"]
+[ext_resource type="Texture2D" uid="uid://di3uetgiy7fbe" path="res://assets/pictures/mil_falc1.png" id="3_tibfv"]
+[ext_resource type="StyleBox" uid="uid://bsljtnmq76xdh" path="res://assets/themes/rounded_corners_pressed.tres" id="4_dwnmr"]
+[ext_resource type="PackedScene" uid="uid://y5pujmgochxq" path="res://scenes/y_wing.tscn" id="4_ej5mi"]
+[ext_resource type="Texture2D" uid="uid://ckoihy55mut0n" path="res://assets/pictures/y_wing1.png" id="4_td077"]
+[ext_resource type="StyleBox" uid="uid://cjaphqtwjjv1y" path="res://assets/themes/rounded_corners.tres" id="5_8x53k"]
+[ext_resource type="StyleBox" uid="uid://cgttqxgl6i4da" path="res://assets/themes/rounded_corners_hovered.tres" id="7_xmj7t"]
+[ext_resource type="FontFile" uid="uid://cg8o7wjtfh2qy" path="res://assets/fonts/Starjedi.ttf" id="8_kiqf8"]
+[ext_resource type="FontFile" uid="uid://c00c3yqy0w2o0" path="res://assets/fonts/Starjout.ttf" id="9_eyn0y"]
+[ext_resource type="Shader" path="res://assets/shader/shine.gdshader" id="12_vrx7o"]
+[ext_resource type="Texture2D" uid="uid://b731i23vi7oma" path="res://assets/pictures/black_window.png" id="13_ex30g"]
+[ext_resource type="Shader" path="res://assets/shader/rounded_edge.gdshader" id="13_fhiry"]
+[ext_resource type="Theme" uid="uid://jsrwbr6wnx88" path="res://assets/themes/star_wars_button.theme" id="18_ps1ip"]
+[ext_resource type="Script" path="res://scripts/scene_changer.gd" id="19_e5df8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvmve"]
+shader = ExtResource("12_vrx7o")
+shader_parameter/shine_color = Color(1, 1, 1, 0.25)
+shader_parameter/line_width = 0.1
+shader_parameter/angle = 0.785398
+shader_parameter/speed = 1.0
+shader_parameter/wait_cycles = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_erd7k"]
+shader = ExtResource("13_fhiry")
+shader_parameter/corner_scale = 0.111
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb24t"]
+line_spacing = 10.0
+font = ExtResource("8_kiqf8")
+font_size = 41
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7dprc"]
+shader = ExtResource("12_vrx7o")
+shader_parameter/shine_color = Color(1, 1, 1, 0.25)
+shader_parameter/line_width = 0.1
+shader_parameter/angle = 0.785398
+shader_parameter/speed = 1.0
+shader_parameter/wait_cycles = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7bu2"]
+shader = ExtResource("12_vrx7o")
+shader_parameter/shine_color = Color(1, 1, 1, 0.25)
+shader_parameter/line_width = 0.1
+shader_parameter/angle = 0.785398
+shader_parameter/speed = 1.0
+shader_parameter/wait_cycles = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qexfl"]
+shader = ExtResource("1_1laqr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oywn"]
+shader = ExtResource("2_pfjmj")
+shader_parameter/blur = 2.5
+shader_parameter/brightness = 0.0
+
+[sub_resource type="Animation" id="Animation_earmx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_pkwee"]
+resource_name = "blink"
+
+[sub_resource type="Animation" id="Animation_ig6r0"]
+resource_name = "show_text"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2737"]
+_data = {
+"RESET": SubResource("Animation_earmx"),
+"blink": SubResource("Animation_pkwee"),
+"show_text": SubResource("Animation_ig6r0")
+}
+
+[sub_resource type="Animation" id="Animation_katj3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ghpkx"]
+resource_name = "colour"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rslew"]
+_data = {
+"RESET": SubResource("Animation_katj3"),
+"colour": SubResource("Animation_ghpkx")
+}
+
+[node name="selection_screen" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.994
+offset_right = -1920.0
+offset_bottom = -1073.52
+script = ExtResource("1_tdtgc")
+tween_intensity = 1.2
+tween_duration = 0.3
+x_wing = ExtResource("2_krwm1")
+mil_falc = ExtResource("3_44era")
+y_wing = ExtResource("4_ej5mi")
+
+[node name="ships" type="Node" parent="."]
+
+[node name="select1" type="Button" parent="ships"]
+z_index = 5
+material = SubResource("ShaderMaterial_pvmve")
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.13
+anchor_top = 0.289
+anchor_right = 0.338
+anchor_bottom = 0.659
+offset_left = -0.600021
+offset_top = -0.119995
+offset_right = 0.039917
+offset_bottom = 0.279968
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = ExtResource("2_v451v")
+theme_override_styles/disabled_mirrored = ExtResource("5_8x53k")
+theme_override_styles/disabled = ExtResource("5_8x53k")
+theme_override_styles/hover_mirrored = ExtResource("7_xmj7t")
+theme_override_styles/hover = ExtResource("7_xmj7t")
+theme_override_styles/pressed_mirrored = ExtResource("4_dwnmr")
+theme_override_styles/pressed = ExtResource("4_dwnmr")
+theme_override_styles/normal_mirrored = ExtResource("5_8x53k")
+theme_override_styles/normal = ExtResource("5_8x53k")
+icon_alignment = 1
+
+[node name="rotate1" type="TextureRect" parent="ships/select1"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26
+anchor_top = 0.265
+anchor_right = 0.728
+anchor_bottom = 0.72
+offset_left = -0.159996
+offset_top = 0.0850372
+offset_right = 5.15198
+offset_bottom = 13.08
+pivot_offset = Vector2(100, 100)
+texture = ExtResource("1_rukcs")
+script = ExtResource("2_yfy3u")
+
+[node name="select1_label" type="Label" parent="ships/select1"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_right = 58.5
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_kiqf8")
+theme_override_font_sizes/font_size = 32
+text = "x-Wing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="display1" type="TextureRect" parent="ships/select1"]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_erd7k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.05176e-05
+offset_bottom = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_ex30g")
+
+[node name="display1_text" type="Label" parent="ships/select1"]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -148.0
+offset_right = 152.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_yb24t")
+vertical_alignment = 1
+
+[node name="select2" type="Button" parent="ships"]
+z_index = 1
+material = SubResource("ShaderMaterial_7dprc")
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.396
+anchor_top = 0.289
+anchor_right = 0.604
+anchor_bottom = 0.659
+offset_left = -0.320068
+offset_top = -0.119995
+offset_right = 0.319946
+offset_bottom = 0.279968
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = ExtResource("2_v451v")
+theme_override_styles/disabled_mirrored = ExtResource("5_8x53k")
+theme_override_styles/disabled = ExtResource("5_8x53k")
+theme_override_styles/hover_mirrored = ExtResource("7_xmj7t")
+theme_override_styles/hover = ExtResource("7_xmj7t")
+theme_override_styles/pressed_mirrored = ExtResource("4_dwnmr")
+theme_override_styles/pressed = ExtResource("4_dwnmr")
+theme_override_styles/normal_mirrored = ExtResource("5_8x53k")
+theme_override_styles/normal = ExtResource("5_8x53k")
+
+[node name="rotate2" type="TextureRect" parent="ships/select2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.14
+anchor_right = 0.88
+anchor_bottom = 0.871
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -46.0001
+offset_bottom = -47.4
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(100, 100)
+texture = ExtResource("3_tibfv")
+script = ExtResource("2_yfy3u")
+
+[node name="select2_label" type="Label" parent="ships/select2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_right = 175.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_kiqf8")
+theme_override_font_sizes/font_size = 32
+text = "millennium falcon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="display2" type="TextureRect" parent="ships/select2"]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_erd7k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.05176e-05
+offset_bottom = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_ex30g")
+
+[node name="display2_text" type="Label" parent="ships/select2"]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -148.0
+offset_right = 152.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_yb24t")
+vertical_alignment = 1
+
+[node name="select3" type="Button" parent="ships"]
+z_index = 1
+material = SubResource("ShaderMaterial_b7bu2")
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.662
+anchor_top = 0.289
+anchor_right = 0.871
+anchor_bottom = 0.659
+offset_left = 0.959839
+offset_top = -0.119995
+offset_right = -0.320068
+offset_bottom = 0.279968
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = ExtResource("2_v451v")
+theme_override_styles/disabled_mirrored = ExtResource("5_8x53k")
+theme_override_styles/disabled = ExtResource("5_8x53k")
+theme_override_styles/hover_mirrored = ExtResource("7_xmj7t")
+theme_override_styles/hover = ExtResource("7_xmj7t")
+theme_override_styles/pressed_mirrored = ExtResource("4_dwnmr")
+theme_override_styles/pressed = ExtResource("4_dwnmr")
+theme_override_styles/normal_mirrored = ExtResource("5_8x53k")
+theme_override_styles/normal = ExtResource("5_8x53k")
+
+[node name="rotate3" type="TextureRect" parent="ships/select3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27
+anchor_top = 0.265
+anchor_right = 0.75
+anchor_bottom = 0.753
+offset_right = -3.05176e-05
+offset_bottom = -0.200012
+pivot_offset = Vector2(100, 100)
+texture = ExtResource("4_td077")
+script = ExtResource("2_yfy3u")
+
+[node name="select3_label" type="Label" parent="ships/select3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_right = 58.5
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_kiqf8")
+theme_override_font_sizes/font_size = 32
+text = "y-Wing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="display3" type="TextureRect" parent="ships/select3"]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_erd7k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.05176e-05
+offset_bottom = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_ex30g")
+
+[node name="display3_text" type="Label" parent="ships/select3"]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -148.0
+offset_right = 152.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_yb24t")
+vertical_alignment = 1
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 1)
+
+[node name="nebula_texture" type="TextureRect" parent="background"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qexfl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -610.0
+offset_right = 470.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c2wm2")
+stretch_mode = 6
+
+[node name="ColorRect2" type="ColorRect" parent="background"]
+material = SubResource("ShaderMaterial_8oywn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="Node" parent="."]
+
+[node name="colour_ship" type="Label" parent="text"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -289.0
+offset_right = 269.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 20
+theme_override_font_sizes/font_size = 45
+text = "Ausgewählte Farbe: Standard
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="typing" type="AnimationPlayer" parent="text/colour_ship"]
+libraries = {
+"": SubResource("AnimationLibrary_w2737")
+}
+autoplay = "show_text"
+
+[node name="colour_change" type="AnimationPlayer" parent="text/colour_ship"]
+libraries = {
+"": SubResource("AnimationLibrary_rslew")
+}
+autoplay = "colour"
+
+[node name="pick_text" type="Label" parent="text"]
+anchors_preset = -1
+anchor_left = 0.211
+anchor_top = 0.111
+anchor_right = 0.778
+anchor_bottom = 0.216
+offset_left = 0.879974
+offset_top = 0.119987
+offset_right = -0.760132
+offset_bottom = -0.279999
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 25
+theme_override_fonts/font = ExtResource("9_eyn0y")
+theme_override_font_sizes/font_size = 70
+text = "Wähle dein raumschiff"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="typing" type="AnimationPlayer" parent="text/pick_text"]
+libraries = {
+"": SubResource("AnimationLibrary_w2737")
+}
+autoplay = "show_text"
+
+[node name="colour_change" type="AnimationPlayer" parent="text/pick_text"]
+libraries = {
+"": SubResource("AnimationLibrary_rslew")
+}
+autoplay = "colour"
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 981.0
+offset_right = 332.0
+offset_bottom = 1053.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("18_ps1ip")
+text = "zurück"
+script = ExtResource("19_e5df8")
+
+[connection signal="mouse_entered" from="ships/select1" to="." method="_on_select_1_mouse_entered"]
+[connection signal="mouse_exited" from="ships/select1" to="." method="_on_select_1_mouse_exited"]
+[connection signal="pressed" from="ships/select1" to="." method="_on_x_wing_selection_pressed"]
+[connection signal="mouse_entered" from="ships/select2" to="." method="_on_select_2_mouse_entered"]
+[connection signal="mouse_exited" from="ships/select2" to="." method="_on_select_2_mouse_exited"]
+[connection signal="pressed" from="ships/select2" to="." method="_on_millenium_falcon_selection_pressed"]
+[connection signal="mouse_entered" from="ships/select3" to="." method="_on_select_3_mouse_entered"]
+[connection signal="mouse_exited" from="ships/select3" to="." method="_on_select_3_mouse_exited"]
+[connection signal="pressed" from="ships/select3" to="." method="_on_y_wing_selection_pressed"]
+[connection signal="pressed" from="back_button" to="back_button" method="_select_back_pressed"]

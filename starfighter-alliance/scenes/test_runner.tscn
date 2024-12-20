@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://vluoguymbjdp"]
+
+[ext_resource type="PackedScene" uid="uid://c45yshfpwq7cn" path="res://scenes/x_wing.tscn" id="1_gmpht"]
+[ext_resource type="PackedScene" uid="uid://dp8lxbfhuh5a5" path="res://scenes/asteroid.tscn" id="2_yhv0n"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q1xo1"]
+normal = Vector2(-1, 0)
+distance = -46.7689
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bhp5v"]
+normal = Vector2(1, 0)
+distance = -114.286
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k8m8t"]
+distance = -159.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnduu"]
+size = Vector2(1920, 2)
+
+[node name="test_world" type="Node"]
+
+[node name="x-wing" parent="." instance=ExtResource("1_gmpht")]
+
+[node name="single_background_black" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -19.0
+offset_right = -33.0
+offset_bottom = -19.0
+scale = Vector2(1.05, 1.05)
+color = Color(0, 0, 0, 1)
+
+[node name="barrier_around" type="StaticBody2D" parent="single_background_black"]
+z_index = 2
+position = Vector2(-285.714, 851.429)
+collision_layer = 8
+
+[node name="barrier_right" type="CollisionShape2D" parent="single_background_black/barrier_around"]
+position = Vector2(2097.14, -279.048)
+shape = SubResource("WorldBoundaryShape2D_q1xo1")
+
+[node name="barrier_left" type="CollisionShape2D" parent="single_background_black/barrier_around"]
+position = Vector2(433.333, -334.286)
+shape = SubResource("WorldBoundaryShape2D_bhp5v")
+
+[node name="barrier_bottom" type="CollisionShape2D" parent="single_background_black/barrier_around"]
+position = Vector2(1209.52, 36.1904)
+shape = SubResource("WorldBoundaryShape2D_k8m8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="single_background_black/barrier_around"]
+position = Vector2(1269.52, -833.334)
+shape = SubResource("RectangleShape2D_nnduu")
+
+[node name="asteroid" parent="." instance=ExtResource("2_yhv0n")]
+position = Vector2(1642, 173)
