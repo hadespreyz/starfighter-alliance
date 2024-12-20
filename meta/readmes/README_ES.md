@@ -129,7 +129,7 @@ Los objetivos del proyecto *Starfighter Alliance* son:
 - **combate-estelar**: El proyecto real con todos los códigos en Godot, directamente editable en el motor. Además, aquí se proporciona una [aplicación](<../../starfighter-alliance/Starfighter Alliance.exe>) con la que se puede jugar al juego.
 
 # 📜 Licencia general
-Este proyecto está licenciado bajo la Apache License 2.0. Consulte el archivo [License](http://www.apache.org/licenses/LICENSE-2.0) en línea o en [Project](../LICENCE.md) para más detalles.
+Este proyecto está licenciado bajo la Apache License 2.0. Consulte el archivo [License](http://www.apache.org/licenses/LICENSE-2.0) en línea o en [Project](../../LICENCE.md) para más detalles.
 
 # ⬇️ Assets
 1. https://deep-fold.itch.io/space-background-generator

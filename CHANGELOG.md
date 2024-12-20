@@ -1,8 +1,8 @@
 # Changelog
 
-<a href="changelogs/CHANGELOG_EN.md">English</a> |
-<a href="changelogs/CHANGELOG_ES.md">Español</a> |
-<a href="changelogs/CHANGELOG_FR.md">Français</a>
+<a href="meta/changelogs/CHANGELOG_EN.md">English</a> |
+<a href="meta/changelogs/CHANGELOG_ES.md">Español</a> |
+<a href="meta/changelogs/CHANGELOG_FR.md">Français</a>
 
 ## Einleitung
 

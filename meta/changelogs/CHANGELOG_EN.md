@@ -1,6 +1,6 @@
 # Changelog ENGLISH
 
-<a href="../CHANGELOG.md">Deutsch</a> |
+<a href="../../CHANGELOG.md">Deutsch</a> |
 <a href="CHANGELOG_ES.md">Español</a> |
 <a href="CHANGELOG_FR.md">Français</a>
 
