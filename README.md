@@ -1,9 +1,4 @@
 <div align="center">
-<p align="center">
-  <img src="images/Read.me_Assets/uni-ulm-logo.png" alt="Uni Logo" 
-  width="25%">
-</p>
-
 
  # Starfighter Alliance – Software-Einzelprojekt
 
@@ -69,15 +64,17 @@ Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **So
 - [⬇️ Assets](#️-assets)
   
 # ⚠️ Disclaimer
+>[!NOTE]
+>- Dieses Projekt ist noch in **aktiver** Entwicklung.
+>- Erwarte bugs und **starke** Änderungen.
+>- **Dieses Projekt wird "wie besehen" bereitgestellt.**  
+>- Dieses Projekt ist durch ChatGPT unterstützt!
 
-- Dieses Projekt ist noch in **aktiver** Entwicklung.
-- Erwarte bugs und **starke** Änderungen.
-- **Dieses Projekt wird "wie besehen" bereitgestellt.**  
-- Dieses Projekt ist durch ChatGPT unterstützt!
+> [!WARNING]
+> Das Spiel verbindet sich bei Start automatisch mit einem [eingerichteten Server](https://softwaregrund.pro/jekt/) der Universität Ulm. Die Verbindung läuft über die `WebSocketPeer`-Klasse in Godot.
 
-> **Wichtig**: Das Spiel verbindet sich bei Start automatisch mit einem [eingerichteten Server](https://softwaregrund.pro/jekt/) der Universität Ulm. Die Verbindung läuft über die `WebSocketPeer`-Klasse in Godot.
-        
-> **Hinweis**: Das Spiel ist auf ein festes Verhältnis von 16:9 (1920x1080) gesetzt.
+>[!IMPORTANT]        
+> Das Spiel ist auf ein festes Verhältnis von 16:9 (1920x1080) gesetzt.
 ---
 
 

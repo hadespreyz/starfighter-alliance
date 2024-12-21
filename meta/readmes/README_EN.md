@@ -1,9 +1,4 @@
 <div align="center">
-<p align="center">
-  <img src="../../images/Read.me_Assets/uni-ulm-logo.png" alt="Uni Logo" 
-  width="25%">
-</p>
-
 
  # Starfighter Alliance – Software-Project
 
@@ -71,13 +66,17 @@ Translation supported by DeepL-AI
   
 # ⚠️ Disclaimer
 
-- This project is still in **active** development.
-- Expect bugs and major changes.
-- **This project is provided “as is”.**  
+>[!NOTE]
+>- This project is still in **active** development.
+>- Expect bugs and major changes.
+>- **This project is provided “as is”.**  
 
-> **Important**: The game automatically connects to a [configured server](https://softwaregrund.pro/jekt/) of the University of Ulm at startup. The connection runs via the `WebSocketPeer` class in Godot.
-        
-> **Note**: The game is set to a ratio of 16:9 (1920x1080).
+> [!WARNING]
+> The game automatically connects to a [configured server](https://softwaregrund.pro/jekt/) of the University of Ulm at startup. The connection runs via the `WebSocketPeer` class in Godot.
+
+>[!IMPORTANT]        
+> The game is set to a ratio of 16:9 (1920x1080).
+
 ---
 
 
