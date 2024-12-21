@@ -1,0 +1,46 @@
+templates:
+  - name: "Fehlerbericht"
+    description: "Melde einen Fehler"
+    labels:
+      - "bug"
+    body:
+      - type: markdown
+        attributes:
+          value: |
+            Bitte fülle die untenstehenden Abschnitte aus, um uns zu helfen, den Fehler zu identifizieren und zu beheben.
+      - type: textarea
+        id: description
+        attributes:
+          label: "Beschreibe deinen Fehler"
+          placeholder: "Wenn ich hier klicke, passiert dies"
+        validations:
+          required: true
+      - type: textarea
+        id: steps
+        attributes:
+          label: "Schritte zur Reproduktion"
+          placeholder: |
+            1. Gehe auf Seite X
+            2. Klicke hier
+            3. Klicke dort
+        validations:
+          required: true
+      - type: textarea
+        id: expected
+        attributes:
+          label: "Was war das erwartete Ergebnis?"
+          placeholder: "Ich erwartete, dass dies passiert"
+      - type: textarea
+        id: screenshots
+        attributes:
+          label: "Füge hier Screenshots oder Videos hinzu (optional)"
+      - type: dropdown
+        id: assign
+        attributes:
+          label: "Möchtest du an diesem Problem arbeiten?"
+          options:
+            - "Ja"
+      - type: markdown
+        attributes:
+          value: |
+            Danke, dass du dieses Problem gemeldet hast! Wir werden uns so schnell wie möglich bei dir melden.

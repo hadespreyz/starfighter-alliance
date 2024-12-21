@@ -1,0 +1,53 @@
+templates:
+  - name: "User Story English"
+    description: "Describe a feature or requirement"
+    labels:
+      - "user story"
+    body:
+      - type: markdown
+        attributes:
+          value: |
+            # User Story
+
+            **As a** [Role]  
+            **I want to** [Goal/Activity],  
+            **so that** [Reason/Justification].
+
+            ---
+
+            ## Description
+
+            [Add a detailed description of the user story here.]
+
+            ## Acceptance Criteria
+
+            - [Acceptance Criterion 1]
+            - [Acceptance Criterion 2]
+            - [Acceptance Criterion 3]
+
+            ---
+
+            <!-- 
+            ## INVEST Criteria
+
+            - **I - Independent:** Is the user story independent of others?
+            - **N - Negotiable:** Can the user story be adjusted?
+            - **V - Valuable:** Does the user story provide value to the user?
+            - **E - Estimable:** Can the effort be estimated?
+            - **S - Small:** Is the user story small enough for an iteration?
+            - **T - Testable:** Can the user story be tested?
+            -->
+
+            <!-- 
+            ## Practical Tips
+
+            - Use everyday language.
+            - Be precise, but not overly technical.
+            - Emphasize the acceptance criteria.
+            - Check with the team for understanding.
+            - Keep user stories visible and accessible.
+            -->
+
+            ## Call-to-Action
+
+            Remember, a User Story is the **beginning** of the conversation, not the end.

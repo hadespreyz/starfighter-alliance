@@ -1,0 +1,44 @@
+templates:
+  - name: "User Story Deutsch"
+    description: "Beschreibe ein Feature oder eine Anforderung"
+    labels:
+      - "user story"
+    body:
+      - type: markdown
+        attributes:
+          value: |
+            # User Story
+
+            **Als** [Rolle]  
+            **möchte ich** [Ziel/Aktivität],  
+            **um** [Grund/Begründung].
+
+            ---
+
+            ## Beschreibung
+
+            [Füge hier eine detaillierte Beschreibung der User Story hinzu.]
+
+            ## Akzeptanzkriterien
+
+            - [Akzeptanzkriterium 1]
+            - [Akzeptanzkriterium 2]
+            - [Akzeptanzkriterium 3]
+
+            ---
+
+            <!-- 
+            ## INVEST-Kriterien
+
+            - **I - Unabhängig:** Ist die User Story unabhängig von anderen?
+            - **N - Verhandelbar:** Kann die User Story angepasst werden?
+            - **V - Wertvoll:** Bringt die User Story einen Mehrwert für den Nutzer?
+            - **E - Schätzbar:** Kann der Aufwand geschätzt werden?
+            - **S - Klein:** Ist die User Story klein genug für eine Iteration?
+            - **T - Testbar:** Kann die User Story getestet werden?
+            -->
+
+            <!-- 
+            ## Tipps für die Praxis
+
+    
