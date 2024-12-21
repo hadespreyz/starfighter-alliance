@@ -1,38 +1,41 @@
-templates:
-  - name: "Funktionsanfrage"
-    description: "Schlage eine neue Funktion vor"
-    labels:
-      - "enhancement"
-    body:
-      - type: markdown
-        attributes:
-          value: |
-            Bitte fülle die untenstehenden Abschnitte aus, um uns bei der Bearbeitung deiner Funktionsanfrage zu helfen.
-      - type: textarea
-        id: problem
-        attributes:
-          label: "Ist deine Funktionsanfrage mit einem Problem verbunden? Bitte beschreibe es."
-          placeholder: "Eine klare und präzise Beschreibung des Problems. Zum Beispiel: Ich bin immer frustriert, wenn ..."
-        validations:
-          required: true
-      - type: textarea
-        id: solution
-        attributes:
-          label: "Beschreibe die Lösung, die du dir wünschst"
-          placeholder: "Eine klare und präzise Beschreibung dessen, was du dir als Lösung vorstellst."
-        validations:
-          required: true
-      - type: textarea
-        id: alternatives
-        attributes:
-          label: "Beschreibe Alternativen, die du in Betracht gezogen hast"
-          placeholder: "Eine klare und präzise Beschreibung von alternativen Lösungen oder Funktionen, die du in Erwägung gezogen hast."
-      - type: textarea
-        id: context
-        attributes:
-          label: "Zusätzlicher Kontext"
-          placeholder: "Füge hier weiteren Kontext oder Screenshots zur Funktionsanfrage hinzu."
-      - type: markdown
-        attributes:
-          value: |
-            Vielen Dank für deine Funktionsanfrage! Wir werden uns bald bei dir melden, um sie weiter zu besprechen.
+name: "Funktionsanfrage"
+description: "Fordere eine neue Funktion"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bitte fülle die folgenden Abschnitte aus, um deine gewünschte Funktion zu beschreiben.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Ist deine Funktionsanfrage mit einem Problem verbunden? Bitte beschreibe es."
+      placeholder: "Eine klare und präzise Beschreibung des Problems. Zum Beispiel: Ich bin immer frustriert, wenn ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: loesung
+    attributes:
+      label: "Beschreibe die Lösung, die du dir wünschst"
+      placeholder: "Eine klare und präzise Beschreibung dessen, was du dir als Lösung vorstellst."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternative
+    attributes:
+      label: "Beschreibe Alternativen, die du in Betracht gezogen hast"
+      placeholder: "Eine klare und präzise Beschreibung von alternativen Lösungen oder Funktionen, die du in Erwägung gezogen hast."
+    
+  - type: textarea
+    id: kontext
+    attributes:
+      label: "Zusätzlicher Kontext"
+      placeholder: "Füge hier weiteren Kontext oder Screenshots zur Funktionsanfrage hinzu."
+
+  - type: markdown
+    attributes:
+      value: |
+        Vielen Dank für deine Funktionsanfrage! Wir werden uns das anschauen und dir so schnell wie möglich antworten.

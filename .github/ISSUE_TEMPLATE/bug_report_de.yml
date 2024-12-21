@@ -1,46 +1,50 @@
-templates:
-  - name: "Fehlerbericht"
-    description: "Melde einen Fehler"
-    labels:
-      - "bug"
-    body:
-      - type: markdown
-        attributes:
-          value: |
-            Bitte fülle die untenstehenden Abschnitte aus, um uns zu helfen, den Fehler zu identifizieren und zu beheben.
-      - type: textarea
-        id: description
-        attributes:
-          label: "Beschreibe deinen Fehler"
-          placeholder: "Wenn ich hier klicke, passiert dies"
-        validations:
-          required: true
-      - type: textarea
-        id: steps
-        attributes:
-          label: "Schritte zur Reproduktion"
-          placeholder: |
-            1. Gehe auf Seite X
-            2. Klicke hier
-            3. Klicke dort
-        validations:
-          required: true
-      - type: textarea
-        id: expected
-        attributes:
-          label: "Was war das erwartete Ergebnis?"
-          placeholder: "Ich erwartete, dass dies passiert"
-      - type: textarea
-        id: screenshots
-        attributes:
-          label: "Füge hier Screenshots oder Videos hinzu (optional)"
-      - type: dropdown
-        id: assign
-        attributes:
-          label: "Möchtest du an diesem Problem arbeiten?"
-          options:
-            - "Ja"
-      - type: markdown
-        attributes:
-          value: |
-            Danke, dass du dieses Problem gemeldet hast! Wir werden uns so schnell wie möglich bei dir melden.
+name: "Fehlerbericht"
+description: "Melde einen Fehler"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bitte fülle die folgenden Abschnitte aus, um uns zu helfen, den Fehler zu identifizieren und zu beheben.
+
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: "Beschreibe dein Problem"
+      placeholder: "Wenn ich hier klicke, passiert dies..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: schritte
+    attributes:
+      label: "Schritte zur Reproduktion"
+      placeholder: |
+        1. Gehe zu Seite X
+        2. Klicke hier
+        3. Klicke dort
+    validations:
+      required: true
+
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: "Was war das erwartete Ergebnis?"
+      placeholder: "Ich erwartete, dass dies passiert"
+    
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Füge Screenshots oder Videos hinzu (optional)"
+      
+  - type: dropdown
+    id: zuteilen
+    attributes:
+      label: "Möchtest du an diesem Fehler arbeiten?"
+      options:
+        - "Ja"
+    
+  - type: markdown
+    attributes:
+      value: |
+        Vielen Dank, dass du diesen Fehler gemeldet hast! Wir werden uns so schnell wie möglich bei dir melden.

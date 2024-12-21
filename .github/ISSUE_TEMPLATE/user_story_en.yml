@@ -1,53 +1,56 @@
-templates:
-  - name: "User Story English"
-    description: "Describe a feature or requirement"
-    labels:
-      - "user story"
-    body:
-      - type: markdown
-        attributes:
-          value: |
-            # User Story
+name: "User Story English"
+description: "Create a user story"
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to describe the user story.
 
-            **As a** [Role]  
-            **I want to** [Goal/Activity],  
-            **so that** [Reason/Justification].
+  - type: textarea
+    id: role
+    attributes:
+      label: "As a (role)"
+      placeholder: "e.g., As a customer"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: goal
+    attributes:
+      label: "I want to (goal)"
+      placeholder: "e.g., I want to view my order history"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: reason
+    attributes:
+      label: "So that (reason)"
+      placeholder: "e.g., So that I can reorder quickly"
+    validations:
+      required: true
 
-            ---
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      placeholder: "Provide a detailed description of the user story"
+    validations:
+      required: true
 
-            ## Description
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      placeholder: |
+        - [ ] Acceptance criterion 1
+        - [ ] Acceptance criterion 2
+        - [ ] Acceptance criterion 3
+    validations:
+      required: true
 
-            [Add a detailed description of the user story here.]
-
-            ## Acceptance Criteria
-
-            - [Acceptance Criterion 1]
-            - [Acceptance Criterion 2]
-            - [Acceptance Criterion 3]
-
-            ---
-
-            <!-- 
-            ## INVEST Criteria
-
-            - **I - Independent:** Is the user story independent of others?
-            - **N - Negotiable:** Can the user story be adjusted?
-            - **V - Valuable:** Does the user story provide value to the user?
-            - **E - Estimable:** Can the effort be estimated?
-            - **S - Small:** Is the user story small enough for an iteration?
-            - **T - Testable:** Can the user story be tested?
-            -->
-
-            <!-- 
-            ## Practical Tips
-
-            - Use everyday language.
-            - Be precise, but not overly technical.
-            - Emphasize the acceptance criteria.
-            - Check with the team for understanding.
-            - Keep user stories visible and accessible.
-            -->
-
-            ## Call-to-Action
-
-            Remember, a User Story is the **beginning** of the conversation, not the end.
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for creating this user story! We will review it and get back to you soon.

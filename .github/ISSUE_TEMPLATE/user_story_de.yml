@@ -1,44 +1,56 @@
-templates:
-  - name: "User Story Deutsch"
-    description: "Beschreibe ein Feature oder eine Anforderung"
-    labels:
-      - "user story"
-    body:
-      - type: markdown
-        attributes:
-          value: |
-            # User Story
+name: "User Story Deutsch"
+description: "Erstelle eine User Story"
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bitte fülle die folgenden Abschnitte aus, um die User Story zu beschreiben.
 
-            **Als** [Rolle]  
-            **möchte ich** [Ziel/Aktivität],  
-            **um** [Grund/Begründung].
+  - type: textarea
+    id: rolle
+    attributes:
+      label: "Als (Rolle)"
+      placeholder: "z.B., Als Kunde"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: ziel
+    attributes:
+      label: "Möchte ich (Ziel)"
+      placeholder: "z.B., Möchte ich meine Bestellhistorie einsehen"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: grund
+    attributes:
+      label: "Damit (Grund)"
+      placeholder: "z.B., Damit ich schnell wieder bestellte Produkte nachbestellen kann"
+    validations:
+      required: true
 
-            ---
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: "Beschreibung"
+      placeholder: "Gib eine detaillierte Beschreibung der User Story an"
+    validations:
+      required: true
 
-            ## Beschreibung
+  - type: textarea
+    id: akzeptanzkriterien
+    attributes:
+      label: "Akzeptanzkriterien"
+      placeholder: |
+        - [ ] Akzeptanzkriterium 1
+        - [ ] Akzeptanzkriterium 2
+        - [ ] Akzeptanzkriterium 3
+    validations:
+      required: true
 
-            [Füge hier eine detaillierte Beschreibung der User Story hinzu.]
-
-            ## Akzeptanzkriterien
-
-            - [Akzeptanzkriterium 1]
-            - [Akzeptanzkriterium 2]
-            - [Akzeptanzkriterium 3]
-
-            ---
-
-            <!-- 
-            ## INVEST-Kriterien
-
-            - **I - Unabhängig:** Ist die User Story unabhängig von anderen?
-            - **N - Verhandelbar:** Kann die User Story angepasst werden?
-            - **V - Wertvoll:** Bringt die User Story einen Mehrwert für den Nutzer?
-            - **E - Schätzbar:** Kann der Aufwand geschätzt werden?
-            - **S - Klein:** Ist die User Story klein genug für eine Iteration?
-            - **T - Testbar:** Kann die User Story getestet werden?
-            -->
-
-            <!-- 
-            ## Tipps für die Praxis
-
-    
+  - type: markdown
+    attributes:
+      value: |
+        Vielen Dank, dass du diese User Story erstellt hast! Wir werden sie überprüfen und uns bald bei dir melden.
