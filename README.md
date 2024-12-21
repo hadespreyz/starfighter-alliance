@@ -71,7 +71,7 @@ Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **So
 # ⚠️ Disclaimer
 
 - Dieses Projekt ist noch in **aktiver** Entwicklung.
-- Erwarte bugs und starke Änderungen.
+- Erwarte bugs und **starke** Änderungen.
 - **Dieses Projekt wird "wie besehen" bereitgestellt.**  
 - Dieses Projekt ist durch ChatGPT unterstützt!
 
