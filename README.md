@@ -77,7 +77,7 @@ Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **So
 
 > **Wichtig**: Das Spiel verbindet sich bei Start automatisch mit einem [eingerichteten Server](https://softwaregrund.pro/jekt/) der Universität Ulm. Die Verbindung läuft über die `WebSocketPeer`-Klasse in Godot.
         
-> **Hinweis**: Das Spiel ist auf ein Verhältnis von 16:9 (1920x1080) gesetzt.
+> **Hinweis**: Das Spiel ist auf ein festes Verhältnis von 16:9 (1920x1080) gesetzt.
 ---
 
 
