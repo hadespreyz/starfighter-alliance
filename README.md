@@ -13,7 +13,7 @@
   <a href="/meta/readmes/README_FR.md">Français</a>
 </p>
 
-Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **Software-Projekt** von Alhasan Ramadan entwickelt wird.  
+Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **Software-Projekt** von Alhasan Ramadan entwickelt wurde.  
 <img src="https://media.giphy.com/media/l2JeeNKZe8cAUkVIk/giphy.gif" alt="GIF Title" width="250">
 </div>
 
