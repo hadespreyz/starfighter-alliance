@@ -1,0 +1,19 @@
+{
+	"lives": 5,
+	"spaceships": [
+		{
+			"name": 5,
+			"speed": "5",
+			"shotPower": "5"
+		},{
+			"name": 5,
+			"speed": "5",
+			"shotPower": "5"
+		},{
+			"name": 5,
+			"speed": "5",
+			"shotPower": "5"
+		}
+	],
+	"obstacleLives": 5
+}

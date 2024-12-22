@@ -1,0 +1,19 @@
+{
+    "lives": 3,
+    "spaceships": [
+        {
+            "name": "X-Fighter",
+            "speed": 4,
+            "shotPower": 5
+        },{
+            "name": "Millenium-Falcon",
+            "speed": 6,
+            "shotPower": 5
+        },{
+            "name": "Y-Fighter",
+            "speed": 2,
+            "shotPower": 5
+        }
+    ],
+    "obstacleLives": 3
+}

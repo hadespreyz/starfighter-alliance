@@ -1,0 +1,41 @@
+name: "Feature Request"
+description: "Request a new feature"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the following sections to describe your requested feature.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Is your feature request related to a problem? Please describe it."
+      placeholder: "A clear and concise description of the problem. For example: I'm always frustrated when ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Describe the solution you would like"
+      placeholder: "A clear and concise description of what you envision as the solution."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternative
+    attributes:
+      label: "Describe alternatives you have considered"
+      placeholder: "A clear and concise description of alternative solutions or features you have considered."
+    
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional context"
+      placeholder: "Provide any additional context or screenshots for the feature request."
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting this feature request! We will review it and get back to you as soon as possible.

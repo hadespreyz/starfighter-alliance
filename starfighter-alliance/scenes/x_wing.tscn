@@ -1,9 +1,27 @@
+<<<<<<< HEAD
 [gd_scene load_steps=33 format=3 uid="uid://c45yshfpwq7cn"]
 
 [ext_resource type="Script" path="res://scripts/x_wing.gd" id="1_blneg"]
 [ext_resource type="Texture2D" uid="uid://bkewuaqp6udo7" path="res://assets/sprites/x-wing-pixel-trans-Sheet.png" id="1_e1aqt"]
 [ext_resource type="Texture2D" uid="uid://c6x8f47kbg2ef" path="res://assets/sprites/x-wing-pixel-trans.png" id="1_xnfx3"]
 [ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="4_gik0s"]
+=======
+[gd_scene load_steps=38 format=3 uid="uid://c45yshfpwq7cn"]
+
+[ext_resource type="Script" path="res://scripts/x_wing.gd" id="1_blneg"]
+[ext_resource type="Texture2D" uid="uid://bkewuaqp6udo7" path="res://assets/sprites/x-wing-pixel-trans-Sheet.png" id="1_e1aqt"]
+[ext_resource type="Texture2D" uid="uid://c6x8f47kbg2ef" path="res://assets/pictures/x-wing-pixel-trans.png" id="1_xnfx3"]
+[ext_resource type="Shader" path="res://assets/shader/swapper.gdshader" id="2_s4u1k"]
+[ext_resource type="Shader" path="res://assets/shader/shield.gdshader" id="5_75r88"]
+[ext_resource type="AudioStream" uid="uid://cmstmjnghc8ef" path="res://assets/soundeffects/laser-shot-ingame-230500.mp3" id="6_gt16y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ptwy"]
+shader = ExtResource("2_s4u1k")
+shader_parameter/pal_source_1 = Color(0.305882, 0.25098, 0.192157, 1)
+shader_parameter/pal_source_2 = Color(0.447059, 0.423529, 0.415686, 1)
+shader_parameter/pal_swap_1 = Color(0.305882, 0.25098, 0.192157, 1)
+shader_parameter/pal_swap_2 = Color(0.447059, 0.423529, 0.415686, 1)
+>>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a7hrp"]
 atlas = ExtResource("1_e1aqt")
@@ -232,6 +250,7 @@ animations = [{
 "speed": 10.0
 }]
 
+<<<<<<< HEAD
 [node name="x-wing" type="CharacterBody2D"]
 script = ExtResource("1_blneg")
 
@@ -243,3 +262,65 @@ sprite_frames = SubResource("SpriteFrames_4w6bu")
 animation = &"idle"
 autoplay = "idle"
 script = ExtResource("4_gik0s")
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udm81"]
+size = Vector2(114, 110)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bvdi"]
+shader = ExtResource("5_75r88")
+shader_parameter/angle = 4.75
+shader_parameter/spread_angle = 3.14159
+shader_parameter/progress = 1.0
+shader_parameter/border_energy_offset = 0.069
+shader_parameter/color = Color(0.227362, 0.337198, 0.786713, 1)
+shader_parameter/edges_color = Color(0.526395, 0.566108, 0.222286, 1)
+shader_parameter/edges_valueable = 0.0
+shader_parameter/edges_fade = 1.0
+
+[node name="x-wing" type="CharacterBody2D" groups=["spaceships"]]
+z_index = 2
+position = Vector2(960, 977)
+scale = Vector2(1.7, 1.7)
+collision_mask = 10
+script = ExtResource("1_blneg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_0ptwy")
+sprite_frames = SubResource("SpriteFrames_4w6bu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.00006)
+shape = SubResource("RectangleShape2D_udm81")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="shield" type="ColorRect" parent="."]
+z_index = 11
+material = SubResource("ShaderMaterial_5bvdi")
+offset_left = -85.8823
+offset_top = -79.4118
+offset_right = 84.1177
+offset_bottom = 148.588
+color = Color(0.734454, 0.0355619, 0.0197759, 1)
+
+[node name="invisibility_timer_x" type="Timer" parent="."]
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="marker_left" type="Marker2D" parent="."]
+position = Vector2(-48.2353, -64.1176)
+
+[node name="marker_right" type="Marker2D" parent="."]
+position = Vector2(47.6471, -64.1177)
+
+[node name="fire_delay_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="laser_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gt16y")
+
+[connection signal="timeout" from="invisibility_timer_x" to="." method="_on_invisibility_timer_x_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+>>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
