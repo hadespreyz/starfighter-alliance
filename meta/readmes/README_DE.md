@@ -159,9 +159,4 @@ Dieses Projekt gilt unter der Apache License 2.0. Siehe die [Lizenz](http://www.
 9. https://www.dafont.com/star-jedi.font
 
 # 🖼️Screenshots
-![alt text](<images/Read.me_Assets/Screenshot 2024-12-23 021136.png>)
-![alt text](<images/Read.me_Assets/Screenshot 2024-12-23 021148.png>)
-![alt text](<images/Read.me_Assets/Screenshot 2024-12-23 021157.png>)
-![alt text](<images/Read.me_Assets/Screenshot 2024-12-23 021222.png>)
-![alt text](<images/Read.me_Assets/Screenshot 2024-12-23 021239.png>)
-![alt text](<images/Read.me_Assets/Screenshot 2024-12-23 021255.png>)
+![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021136.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021148.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021157.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021222.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021239.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021255.png>)
