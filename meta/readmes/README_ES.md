@@ -138,11 +138,9 @@ Los objetivos del proyecto *Starfighter Alliance* son:
 
 
 # 🏗️ Estructura del repositorio de proyectos
-- comentarios**: Todas las críticas y comentarios del tutor
 - **imágenes**: Imágenes del repositorio que se utilizan para el ReadMe, por ejemplo
 - **meta**: Otros archivos Léame en otros idiomas y los cambios en el [ChangeLog](../changelogs/CHANGELOG_ES.md)
-- **project-docs**: Todos los documentos escritos sobre el proyecto, [hojas de presentación](../../project-docs/Abgabe/Blätter), [especificaciones del «cliente»](../../project-docs/Lastenheft/lastenheft_starfighter_v2.pdf) y las [especificaciones](../../project-docs/Pflichtenheft/Pflichtenheftvorlage/pflichtenheft_starfighter.pdf)
-- **combate-estelar**: El proyecto real con todos los códigos en Godot, directamente editable en el motor. Además, aquí se proporciona una [aplicación](<../../starfighter-alliance/Starfighter Alliance.exe>) con la que se puede jugar al juego.
+- **combate-estelar**: El proyecto real con todos los códigos en Godot, directamente editable en el motor. Además, aquí se proporciona una aplicación con la que se puede jugar al juego.
 
 # 📜 Licencia general
 Este proyecto está licenciado bajo la Apache License 2.0. Consulte el archivo [License](http://www.apache.org/licenses/LICENSE-2.0) en línea o en [Project](../../LICENCE.md) para más detalles.

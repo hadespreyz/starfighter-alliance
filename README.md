@@ -139,14 +139,12 @@ The goals of the *Starfighter Alliance* project are:
 
 
 # 🏗️ Structure of the project repository
-- **feedback**: All reviews and comments of the tutor
 - **images**: Images of the repository that are used for the ReadMe, for example
-- **meta**: Other ReadMe files in other languages and the changes in the [ChangeLog](../changelogs/CHANGELOG_EN.md)
-- **project-docs**: All written documents about the project, [submittal sheets](../../project-docs/Abgabe/Blätter), [specifications of the “customer”](../../project-docs/Lastenheft/lastenheft_starfighter_v2.pdf) and the [specifications](../../project-docs/Pflichtenheft/Pflichtenheftvorlage/pflichtenheft_starfighter.pdf)
-- **starfighter-alliance**: The actual project with all codes in Godot, directly editable in the engine. Also, here is a provided [application](<../../starfighter-alliance/Starfighter Alliance.exe>) with which you can play the game.
+- **meta**: Other ReadMe files in other languages and the changes in the [ChangeLog](CHANGELOG.md)
+- **starfighter-alliance**: The actual project with all codes in Godot, directly editable in the engine. Also, there is a provided application with which you can play the game.
 
 # 📜 General license
-This project is licensed under the Apache License 2.0. See the [License](http://www.apache.org/licenses/LICENSE-2.0) file online or in [Project](../../LICENCE.md) for more details
+This project is licensed under the Apache License 2.0. See the [License](http://www.apache.org/licenses/LICENSE-2.0) file online or in [Project](LICENCE.md) for more details
 
 # ⬇️ Assets
 1. https://deep-fold.itch.io/space-background-generator
