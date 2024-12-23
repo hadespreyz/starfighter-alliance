@@ -3,8 +3,8 @@
  # Starfighter Alliance – Projet de logiciel
 
 <p align="center">
-  <a href="../../README.md">Deutsch</a> | 
-  <a href="README_EN.md">English</a> | 
+  <a href="README_DE.md">Deutsch</a> | 
+  <a href="../../README.md">English</a> | 
   <a href="README_ES.md">Español</a>
 </p>
 
@@ -57,13 +57,31 @@ Traduction soutenue par DeepL-AI
 - [Starfighter Alliance – Projet de logiciel](#starfighter-alliance--projet-de-logiciel)
 - [🛠️ Langue et outils](#️-langue-et-outils)
 - [📖 Table des matières](#-table-des-matières)
+- [💻Installation](#installation)
 - [⚠️ Clause de non-responsabilité](#️-clause-de-non-responsabilité)
 - [🎯 Objectifs des projets](#-objectifs-des-projets)
 - [⚙️ Caractéristiques du jeu](#️-caractéristiques-du-jeu)
 - [🏗️ Structure du référentiel du projet](#️-structure-du-référentiel-du-projet)
 - [📜 Licence générale](#-licence-générale)
 - [⬇️ Assets](#️-assets)
+- [🖼️Screenshots](#️screenshots)
   
+
+# 💻Installation
+Téléchargez l'exécutable à partir de l'onglet Releases, ou :
+1. **Clonez le dépôt:**
+   ```bash
+   git clone https://github.com/alhasan-ramadan/starfighter-alliance.git
+   ```
+
+2. **Ouvrir le projet Godot:**
+   - Démarrez Godot et sélectionnez l'option « Import Project ».
+   - Naviguez jusqu'au dossier du dépôt cloné et sélectionnez le fichier `project.godot`.
+
+3. **Exécutez le projet:**
+   - Appuyez sur F5 ou cliquez sur « Start Project » pour lancer le fichier.
+
+
 # ⚠️ Clause de non-responsabilité
 
 >[!NOTE]
@@ -141,3 +159,6 @@ Ce projet est soumis à la licence Apache 2.0. Voir le fichier [License](http://
 7. https://pixabay.com/sound-effects/search/explosion/?pagi=2
 8. https://pixabay.com/music/search/space/
 9. https://www.dafont.com/star-jedi.font
+
+# 🖼️Screenshots
+![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021136.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021148.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021157.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021222.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021239.png>) ![alt text](<../../images/Read.me_Assets/Screenshot 2024-12-23 021255.png>)
