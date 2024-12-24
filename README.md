@@ -8,11 +8,24 @@
   <a href="/meta/readmes/README_FR.md">Français</a>
 </p>
 
-This repository contains a Star Wars game that was developed as part of the lecture **Software-Project**  
 Translation supported by DeepL-AI  
-<img src="https://media.giphy.com/media/l2JeeNKZe8cAUkVIk/giphy.gif" alt="GIF Title" width="250">
+
 </div>
 
+# 📖 Table of Contents
+
+- [Starfighter Alliance – Software-Project](#starfighter-alliance--software-project)
+- [🛠️ Language and Tools](#️-language-and-tools)
+- [📖 Table of Contents](#-table-of-contents)
+- [💻Installation](#installation)
+- [⚠️ Disclaimer](#️-disclaimer)
+- [🎯 Goals of Projects](#-goals-of-projects)
+- [⚙️ Features of the game](#️-features-of-the-game)
+- [🏗️ Structure of the project repository](#️-structure-of-the-project-repository)
+- [📜 General license](#-general-license)
+- [⬇️ Assets](#️-assets)
+- [🖼️Screenshots](#️screenshots)
+  
 # 🛠️ Language and Tools
 <div style="display: flex; flex-direction: row; gap: 20px;">
 <a href="https://daringfireball.net/projects/markdown/" target="_blank">
@@ -51,21 +64,6 @@ Translation supported by DeepL-AI
 
 </div>
 <br />
-
-# 📖 Table of Contents
-
-- [Starfighter Alliance – Software-Project](#starfighter-alliance--software-project)
-- [🛠️ Language and Tools](#️-language-and-tools)
-- [📖 Table of Contents](#-table-of-contents)
-- [💻Installation](#installation)
-- [⚠️ Disclaimer](#️-disclaimer)
-- [🎯 Goals of Projects](#-goals-of-projects)
-- [⚙️ Features of the game](#️-features-of-the-game)
-- [🏗️ Structure of the project repository](#️-structure-of-the-project-repository)
-- [📜 General license](#-general-license)
-- [⬇️ Assets](#️-assets)
-- [🖼️Screenshots](#️screenshots)
-  
 
 # 💻Installation
 Either download the Executable from the Releases Tab, or:
