@@ -25,7 +25,7 @@
 - [⬇️ Assets](#️-assets)
 - [🖼️Screenshots](#️screenshots)
 
-# 🛠️ Language und Tools
+# 🛠️ Spachen und Werkzeug
 <div style="display: flex; flex-direction: row; gap: 20px;">
 <a href="https://daringfireball.net/projects/markdown/" target="_blank">
   <img align="left" alt="Markdown" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" />
