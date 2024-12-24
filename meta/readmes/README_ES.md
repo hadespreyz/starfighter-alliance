@@ -8,11 +8,22 @@
   <a href="README_FR.md">Français</a>
 </p>
 
-Este repositorio contiene un juego de Star Wars que fue desarrollado como parte de la conferencia **Software-Project**.  
-Traducción realizada por DeepL-AI  
-<img src="https://media.giphy.com/media/l2JeeNKZe8cAUkVIk/giphy.gif" alt="GIF Title" width="250">
 </div>
 
+# 📖 Índice de contenidos
+
+- [Starfighter Alliance – Proyecto de software](#starfighter-alliance--proyecto-de-software)
+- [📖 Índice de contenidos](#-índice-de-contenidos)
+- [🛠️ Lengua y herramientas](#️-lengua-y-herramientas)
+- [💻Instalación](#instalación)
+- [⚠️ Descargo de responsabilidad](#️-descargo-de-responsabilidad)
+- [🎯 Objetivos de los proyectos](#-objetivos-de-los-proyectos)
+- [⚙️ Características del juego](#️-características-del-juego)
+- [🏗️ Estructura del repositorio de proyectos](#️-estructura-del-repositorio-de-proyectos)
+- [📜 Licencia general](#-licencia-general)
+- [⬇️ Assets](#️-assets)
+- [🖼️Screenshots](#️screenshots)
+  
 # 🛠️ Lengua y herramientas
 <div style="display: flex; flex-direction: row; gap: 20px;">
 <a href="https://daringfireball.net/projects/markdown/" target="_blank">
@@ -51,21 +62,6 @@ Traducción realizada por DeepL-AI
 
 </div>
 <br />
-
-# 📖 Índice de contenidos
-
-- [Starfighter Alliance – Proyecto de software](#starfighter-alliance--proyecto-de-software)
-- [🛠️ Lengua y herramientas](#️-lengua-y-herramientas)
-- [📖 Índice de contenidos](#-índice-de-contenidos)
-- [💻Instalación](#instalación)
-- [⚠️ Descargo de responsabilidad](#️-descargo-de-responsabilidad)
-- [🎯 Objetivos de los proyectos](#-objetivos-de-los-proyectos)
-- [⚙️ Características del juego](#️-características-del-juego)
-- [🏗️ Estructura del repositorio de proyectos](#️-estructura-del-repositorio-de-proyectos)
-- [📜 Licencia general](#-licencia-general)
-- [⬇️ Assets](#️-assets)
-- [🖼️Screenshots](#️screenshots)
-  
 
 # 💻Instalación
 Descargue el .exe en la pestaña Versiones o:

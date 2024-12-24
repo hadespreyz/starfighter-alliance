@@ -15,8 +15,8 @@ Translation supported by DeepL-AI
 # 📖 Table of Contents
 
 - [Starfighter Alliance – Software-Project](#starfighter-alliance--software-project)
-- [🛠️ Language and Tools](#️-language-and-tools)
 - [📖 Table of Contents](#-table-of-contents)
+- [🛠️ Language and Tools](#️-language-and-tools)
 - [💻Installation](#installation)
 - [⚠️ Disclaimer](#️-disclaimer)
 - [🎯 Goals of Projects](#-goals-of-projects)

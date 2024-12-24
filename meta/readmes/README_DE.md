@@ -14,8 +14,8 @@
 # 📖 Inhaltsverzeichnis
 
 - [Starfighter Alliance – Software-Einzelprojekt](#starfighter-alliance--software-einzelprojekt)
-- [🛠️ Language und Tools](#️-language-und-tools)
 - [📖 Inhaltsverzeichnis](#-inhaltsverzeichnis)
+- [🛠️ Spachen und Werkzeuge](#️-spachen-und-werkzeuge)
 - [💻Installation](#installation)
 - [⚠️ Disclaimer](#️-disclaimer)
 - [🎯 Ziel des Projekts](#-ziel-des-projekts)
@@ -25,7 +25,7 @@
 - [⬇️ Assets](#️-assets)
 - [🖼️Screenshots](#️screenshots)
 
-# 🛠️ Spachen und Werkzeug
+# 🛠️ Spachen und Werkzeuge
 <div style="display: flex; flex-direction: row; gap: 20px;">
 <a href="https://daringfireball.net/projects/markdown/" target="_blank">
   <img align="left" alt="Markdown" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" />

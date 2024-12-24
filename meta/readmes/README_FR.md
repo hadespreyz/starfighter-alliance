@@ -8,11 +8,22 @@
   <a href="README_ES.md">Español</a>
 </p>
 
-Ce dépôt contient un jeu Star Wars qui a été développé dans le cadre du cours **Software-Project**.  
-Traduction soutenue par DeepL-AI  
-<img src="https://media.giphy.com/media/l2JeeNKZe8cAUkVIk/giphy.gif" alt="GIF Title" width="250">
 </div>
 
+# 📖 Table des matières
+
+- [Starfighter Alliance – Projet de logiciel](#starfighter-alliance--projet-de-logiciel)
+- [📖 Table des matières](#-table-des-matières)
+- [🛠️ Langue et outils](#️-langue-et-outils)
+- [💻Installation](#installation)
+- [⚠️ Clause de non-responsabilité](#️-clause-de-non-responsabilité)
+- [🎯 Objectifs des projets](#-objectifs-des-projets)
+- [⚙️ Caractéristiques du jeu](#️-caractéristiques-du-jeu)
+- [🏗️ Structure du référentiel du projet](#️-structure-du-référentiel-du-projet)
+- [📜 Licence générale](#-licence-générale)
+- [⬇️ Assets](#️-assets)
+- [🖼️Screenshots](#️screenshots)
+  
 # 🛠️ Langue et outils
 <div style="display: flex; flex-direction: row; gap: 20px;">
 <a href="https://daringfireball.net/projects/markdown/" target="_blank">
@@ -51,21 +62,6 @@ Traduction soutenue par DeepL-AI
 
 </div>
 <br />
-
-# 📖 Table des matières
-
-- [Starfighter Alliance – Projet de logiciel](#starfighter-alliance--projet-de-logiciel)
-- [🛠️ Langue et outils](#️-langue-et-outils)
-- [📖 Table des matières](#-table-des-matières)
-- [💻Installation](#installation)
-- [⚠️ Clause de non-responsabilité](#️-clause-de-non-responsabilité)
-- [🎯 Objectifs des projets](#-objectifs-des-projets)
-- [⚙️ Caractéristiques du jeu](#️-caractéristiques-du-jeu)
-- [🏗️ Structure du référentiel du projet](#️-structure-du-référentiel-du-projet)
-- [📜 Licence générale](#-licence-générale)
-- [⬇️ Assets](#️-assets)
-- [🖼️Screenshots](#️screenshots)
-  
 
 # 💻Installation
 Téléchargez l'exécutable à partir de l'onglet Releases, ou :
