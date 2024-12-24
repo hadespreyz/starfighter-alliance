@@ -8,9 +8,22 @@
   <a href="/meta/readmes/README_FR.md">Français</a>
 </p>
 
-Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **Software-Projekt** von Alhasan Ramadan entwickelt wurde.  
-<img src="https://media.giphy.com/media/l2JeeNKZe8cAUkVIk/giphy.gif" alt="GIF Title" width="250">
 </div>
+
+
+# 📖 Inhaltsverzeichnis
+
+- [Starfighter Alliance – Software-Einzelprojekt](#starfighter-alliance--software-einzelprojekt)
+- [🛠️ Language und Tools](#️-language-und-tools)
+- [📖 Inhaltsverzeichnis](#-inhaltsverzeichnis)
+- [💻Installation](#installation)
+- [⚠️ Disclaimer](#️-disclaimer)
+- [🎯 Ziel des Projekts](#-ziel-des-projekts)
+- [⚙️ Funktionen des Spiels](#️-funktionen-des-spiels)
+- [🏗️ Aufbau des Projektrepository](#️-aufbau-des-projektrepository)
+- [📜 Allgemeine Lizenz](#-allgemeine-lizenz)
+- [⬇️ Assets](#️-assets)
+- [🖼️Screenshots](#️screenshots)
 
 # 🛠️ Language und Tools
 <div style="display: flex; flex-direction: row; gap: 20px;">
@@ -51,20 +64,6 @@ Dieses Repository enthält ein Star-Wars-Spiel, das im Rahmen der Vorlesung **So
 </div>
 <br />
 
-
-# 📖 Inhaltsverzeichnis
-
-- [Starfighter Alliance – Software-Einzelprojekt](#starfighter-alliance--software-einzelprojekt)
-- [🛠️ Language und Tools](#️-language-und-tools)
-- [📖 Inhaltsverzeichnis](#-inhaltsverzeichnis)
-- [💻Installation](#installation)
-- [⚠️ Disclaimer](#️-disclaimer)
-- [🎯 Ziel des Projekts](#-ziel-des-projekts)
-- [⚙️ Funktionen des Spiels](#️-funktionen-des-spiels)
-- [🏗️ Aufbau des Projektrepository](#️-aufbau-des-projektrepository)
-- [📜 Allgemeine Lizenz](#-allgemeine-lizenz)
-- [⬇️ Assets](#️-assets)
-- [🖼️Screenshots](#️screenshots)
 
 # 💻Installation
 Entweder in dem Releases Tab die .exe downloaden, oder:
