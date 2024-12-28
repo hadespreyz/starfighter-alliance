@@ -8,7 +8,7 @@
   <a href="/meta/readmes/README_FR.md">Français</a>
 </p>
 
-Translation supported by DeepL-AI  
+Translation supported by DeepL-AI! 
 
 </div>
 
