@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-[gd_scene load_steps=18 format=3 uid="uid://cetcttmkctqkj"]
-
-[ext_resource type="Shader" path="res://scenes/verticalscroll.gdshader" id="1_cyr5a"]
-[ext_resource type="Texture2D" uid="uid://4k8xmr5nlskw" path="res://assets/themes/stars.png" id="2_lxqdi"]
-[ext_resource type="Texture2D" uid="uid://d1ay4x785gbn8" path="res://assets/themes/asteroid1.png" id="2_ybed3"]
-[ext_resource type="Texture2D" uid="uid://br8ffyitu50o3" path="res://assets/themes/asteroid2.png" id="3_22f28"]
-[ext_resource type="Texture2D" uid="uid://enu6uk4olqdp" path="res://assets/themes/end_screen_static.png" id="3_206su"]
-[ext_resource type="Texture2D" uid="uid://c7pcvdh4nk3c8" path="res://assets/themes/asteroid4.png" id="4_c1lnx"]
-[ext_resource type="Texture2D" uid="uid://c0tayg18jqe48" path="res://assets/themes/asteroid3.png" id="5_m5wcb"]
-[ext_resource type="FontFile" uid="uid://cg8o7wjtfh2qy" path="res://assets/fonts/Starjedi.ttf" id="6_v4qd3"]
-[ext_resource type="Theme" uid="uid://jsrwbr6wnx88" path="res://assets/themes/star_wars_button.theme" id="7_uq17g"]
-[ext_resource type="Script" path="res://scripts/quit_button.gd" id="8_twshl"]
-[ext_resource type="Script" path="res://scripts/back_to_menu_button.gd" id="9_8b25q"]
-[ext_resource type="PackedScene" uid="uid://degm38x1krkgj" path="res://scenes/saturn.tscn" id="9_na5gp"]
-[ext_resource type="Script" path="res://scripts/restart_button.gd" id="10_ey3ig"]
-=======
 [gd_scene load_steps=27 format=3 uid="uid://cetcttmkctqkj"]
 
 [ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_2xpjx"]
@@ -31,18 +14,12 @@
 [ext_resource type="Theme" uid="uid://jsrwbr6wnx88" path="res://assets/themes/star_wars_button.theme" id="7_uq17g"]
 [ext_resource type="PackedScene" uid="uid://degm38x1krkgj" path="res://scenes/saturn.tscn" id="9_na5gp"]
 [ext_resource type="Script" path="res://scripts/scene_changer.gd" id="13_1yben"]
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 [ext_resource type="PackedScene" uid="uid://bcm0qanacxkrp" path="res://scenes/neutron.tscn" id="14_iegpl"]
 [ext_resource type="PackedScene" uid="uid://c00bdkuo84304" path="res://scenes/moon.tscn" id="15_l526y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t78vi"]
 shader = ExtResource("1_cyr5a")
 
-<<<<<<< HEAD
-[sub_resource type="GDScript" id="GDScript_a5054"]
-
-[node name="Control" type="Control"]
-=======
 [sub_resource type="Animation" id="Animation_earmx"]
 length = 0.001
 tracks/0/type = "value"
@@ -133,19 +110,15 @@ shader = ExtResource("6_tuyux")
 shader_parameter/corner_scale = 0.088
 
 [node name="end_screen" type="Control"]
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-<<<<<<< HEAD
-=======
 script = ExtResource("1_2xpjx")
 tween_intensity = 1.1
 tween_duration = 0.2
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 
 [node name="background" type="Node" parent="."]
 
@@ -178,29 +151,18 @@ grow_vertical = 2
 texture = ExtResource("3_206su")
 stretch_mode = 6
 
-<<<<<<< HEAD
-[node name="game_over" type="Label" parent="background"]
-=======
 [node name="text" type="Node" parent="background"]
 
 [node name="game_over" type="Label" parent="background/text"]
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 anchors_preset = -1
 anchor_left = 0.208
 anchor_top = 0.09
 anchor_right = 0.787
 anchor_bottom = 0.365
-<<<<<<< HEAD
-offset_left = -14.36
-offset_top = -0.200005
-offset_right = 8.95984
-offset_bottom = -0.200012
-=======
 offset_left = -7.36002
 offset_top = -86.2
 offset_right = 15.96
 offset_bottom = -86.2
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 grow_horizontal = 2
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("6_v4qd3")
@@ -209,14 +171,6 @@ text = "Game   ver"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-<<<<<<< HEAD
-[node name="asteroids" type="Node" parent="."]
-script = SubResource("GDScript_a5054")
-
-[node name="Asteroid1" type="Sprite2D" parent="asteroids"]
-z_index = 1
-position = Vector2(1426, 334)
-=======
 [node name="typing" type="AnimationPlayer" parent="background/text/game_over"]
 libraries = {
 "": SubResource("AnimationLibrary_w2737")
@@ -611,105 +565,22 @@ points = PackedVector2Array(259, 141, 259, 753)
 [node name="Asteroid1" type="Sprite2D" parent="asteroids"]
 z_index = 1
 position = Vector2(1540, 114)
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 scale = Vector2(2.45, 2.27)
 texture = ExtResource("2_ybed3")
 
 [node name="Asteroid2" type="Sprite2D" parent="asteroids"]
 z_index = 1
-<<<<<<< HEAD
-position = Vector2(665, 187)
-=======
 position = Vector2(678, 118)
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 texture = ExtResource("3_22f28")
 
 [node name="Asteroid4" type="Sprite2D" parent="asteroids"]
 z_index = 1
-<<<<<<< HEAD
-position = Vector2(1111, 292)
-=======
 position = Vector2(1141, 209)
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 scale = Vector2(1.72, 1.74)
 texture = ExtResource("4_c1lnx")
 
 [node name="Asteroid3" type="Sprite2D" parent="asteroids"]
 z_index = 1
-<<<<<<< HEAD
-position = Vector2(416, 220)
-texture = ExtResource("5_m5wcb")
-
-[node name="Saturn" parent="asteroids" instance=ExtResource("9_na5gp")]
-position = Vector2(1060, 270)
-scale = Vector2(1.5, 1.5)
-
-[node name="buttons" type="Node" parent="."]
-
-[node name="restart_button" type="Button" parent="buttons"]
-anchors_preset = -1
-anchor_left = 0.419
-anchor_top = 0.682
-anchor_right = 0.598
-anchor_bottom = 0.756
-offset_left = 0.519958
-offset_top = -94.5601
-offset_right = 0.311768
-offset_bottom = -94.512
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("7_uq17g")
-theme_override_font_sizes/font_size = 32
-text = "restart"
-script = ExtResource("10_ey3ig")
-
-[node name="back_to_menu_button" type="Button" parent="buttons"]
-anchors_preset = -1
-anchor_left = 0.419
-anchor_top = 0.682
-anchor_right = 0.598
-anchor_bottom = 0.756
-offset_left = 0.519958
-offset_top = -188.56
-offset_right = 0.311768
-offset_bottom = -188.512
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("7_uq17g")
-theme_override_font_sizes/font_size = 32
-text = "back to menu"
-script = ExtResource("9_8b25q")
-
-[node name="quit_button" type="Button" parent="buttons"]
-anchors_preset = -1
-anchor_left = 0.419
-anchor_top = 0.682
-anchor_right = 0.598
-anchor_bottom = 0.756
-offset_left = 0.519958
-offset_top = 0.439941
-offset_right = 0.311768
-offset_bottom = 0.487976
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("7_uq17g")
-theme_override_font_sizes/font_size = 32
-text = "Beenden"
-script = ExtResource("8_twshl")
-
-[node name="Node2D" parent="." instance=ExtResource("14_iegpl")]
-z_index = 2
-position = Vector2(669, 825)
-rotation = -0.392699
-
-[node name="Node2D2" parent="." instance=ExtResource("15_l526y")]
-z_index = 2
-position = Vector2(1398, 904)
-
-[connection signal="pressed" from="buttons/restart_button" to="buttons/restart_button" method="_on_pressed"]
-[connection signal="pressed" from="buttons/back_to_menu_button" to="buttons/back_to_menu_button" method="_on_pressed"]
-[connection signal="pressed" from="buttons/quit_button" to="buttons/quit_button" method="_on_pressed"]
-=======
 position = Vector2(434, 148)
 texture = ExtResource("5_m5wcb")
 
@@ -766,4 +637,3 @@ text = "Beenden"
 [connection signal="pressed" from="buttons/VBoxContainer/quit_button" to="asteroids" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/quit_button" to="buttons/VBoxContainer/back_menu" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/quit_button" to="buttons/VBoxContainer/quit_button" method="_on_pressed"]
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20

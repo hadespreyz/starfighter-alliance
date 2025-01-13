@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-[gd_scene load_steps=15 format=3 uid="uid://bkfm5ysj42sw4"]
-
-[ext_resource type="Script" path="res://scripts/start_button.gd" id="1_8jwya"]
-[ext_resource type="Texture2D" uid="uid://bis8xf41h8kpy" path="res://assets/themes/star_wars_menu_panel_v2.png" id="1_jfa1g"]
-[ext_resource type="Shader" path="res://scenes/scroll.gdshader" id="1_od8uy"]
-[ext_resource type="Texture2D" uid="uid://uq3oojt8qok6" path="res://assets/themes/Space Background (3).png" id="2_u4ncc"]
-[ext_resource type="FontFile" uid="uid://cg8o7wjtfh2qy" path="res://assets/fonts/Starjedi.ttf" id="2_yemde"]
-[ext_resource type="Theme" uid="uid://jsrwbr6wnx88" path="res://assets/themes/star_wars_button.theme" id="5_jqgb1"]
-[ext_resource type="Script" path="res://scripts/quit_button.gd" id="6_i7vpp"]
-[ext_resource type="FontFile" uid="uid://bfjcr3om6i0le" path="res://assets/fonts/STJEDISE.TTF" id="7_lmr0f"]
-[ext_resource type="Texture2D" uid="uid://dd7gy5advrenv" path="res://assets/Logo_Aseprite.svg.png" id="8_jf7uc"]
-[ext_resource type="Texture2D" uid="uid://rejgw8vtjcjy" path="res://assets/Godot_icon.svg.png" id="8_k16hd"]
-=======
 [gd_scene load_steps=34 format=3 uid="uid://bkfm5ysj42sw4"]
 
 [ext_resource type="Texture2D" uid="uid://bis8xf41h8kpy" path="res://assets/pictures/star_wars_menu_panel_v2.png" id="1_jfa1g"]
@@ -32,13 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://bocqpkoodgdtk" path="res://assets/pictures/checkbox_empty.png" id="10_f1y1x"]
 [ext_resource type="Script" path="res://scripts/configuration_manager.gd" id="10_u3luq"]
 [ext_resource type="AudioStream" uid="uid://dtamu6c7ctnme" path="res://assets/soundeffects/button-pressed-38129.mp3" id="18_tmws5"]
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qp3ok"]
 shader = ExtResource("1_od8uy")
 
-<<<<<<< HEAD
-=======
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_42oyx"]
 shader = ExtResource("3_ix4vw")
 shader_parameter/shine_color = Color(1, 1, 1, 0.25)
@@ -47,7 +30,6 @@ shader_parameter/angle = 0.785398
 shader_parameter/speed = 1.0
 shader_parameter/wait_cycles = 3.0
 
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xo7y1"]
 texture = ExtResource("1_jfa1g")
 region_rect = Rect2(15, 31, 994, 978)
@@ -55,8 +37,6 @@ region_rect = Rect2(15, 31, 994, 978)
 [sub_resource type="Theme" id="Theme_us7g5"]
 Panel/styles/panel = SubResource("StyleBoxTexture_xo7y1")
 
-<<<<<<< HEAD
-=======
 [sub_resource type="Theme" id="Theme_4gtvk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljfbq"]
@@ -125,7 +105,6 @@ shader_parameter/cycle_speed = 1.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 1
 
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t6n3"]
 content_margin_left = 5.0
 content_margin_top = 5.0
@@ -137,48 +116,14 @@ expand_margin_left = 4.0
 shadow_color = Color(0.992157, 1, 1, 1)
 shadow_size = 35
 
-<<<<<<< HEAD
-=======
 [sub_resource type="Theme" id="Theme_q1oew"]
 default_font_size = 20
 
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 [node name="StartScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-<<<<<<< HEAD
-offset_left = -1.0
-offset_top = 1.0
-offset_right = -1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_8jwya")
-metadata/_edit_horizontal_guides_ = [-737.0]
-
-[node name="single_background_black" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.001
-anchor_bottom = 1.0
-offset_right = -0.1521
-offset_bottom = -1.0
-color = Color(0, 0, 0, 1)
-
-[node name="nebula_texture" type="TextureRect" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_qp3ok")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -560.0
-offset_top = -17.0
-offset_right = 527.0
-offset_bottom = 1.0
-=======
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_horizontal_guides_ = [-737.0]
@@ -200,28 +145,11 @@ material = SubResource("ShaderMaterial_qp3ok")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_u4ncc")
 stretch_mode = 6
 
-<<<<<<< HEAD
-[node name="start_menu" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.302
-anchor_top = 0.118
-anchor_right = 0.67
-anchor_bottom = 0.779
-offset_left = 0.159973
-offset_top = -0.44001
-offset_right = -0.400024
-offset_bottom = -0.320068
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_us7g5")
-=======
 [node name="center_start" type="CenterContainer" parent="ui"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -420,7 +348,6 @@ offset_left = -200.0
 offset_bottom = 200.0
 grow_horizontal = 0
 texture = ExtResource("9_1har0")
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 
 [node name="labels" type="Node" parent="."]
 
@@ -435,21 +362,6 @@ offset_top = -9158.88
 offset_right = -1615.72
 offset_bottom = -9627.72
 theme_override_fonts/font = ExtResource("7_lmr0f")
-<<<<<<< HEAD
-text = "v.1.0.1"
-
-[node name="title" type="Label" parent="labels"]
-anchors_preset = -1
-anchor_left = 0.313
-anchor_top = 0.153
-anchor_right = 0.685
-anchor_bottom = 0.238
-offset_left = -54.96
-offset_top = 28.76
-offset_right = 43.8
-offset_bottom = 39.96
-grow_horizontal = 2
-=======
 text = "v.2.1.2"
 
 [node name="title" type="Label" parent="labels"]
@@ -465,15 +377,12 @@ offset_right = -9.96008
 offset_bottom = -0.0800171
 grow_horizontal = 2
 pivot_offset = Vector2(406, 51)
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_yemde")
 theme_override_font_sizes/font_size = 44
 text = "Starfighter Alliance"
 horizontal_alignment = 1
 
-<<<<<<< HEAD
-=======
 [node name="typing" type="AnimationPlayer" parent="labels/title"]
 libraries = {
 "": SubResource("AnimationLibrary_w2737")
@@ -517,7 +426,6 @@ theme_override_font_sizes/font_size = 44
 text = "optionen"
 horizontal_alignment = 1
 
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
 [node name="logos" type="Node" parent="."]
 
 [node name="godot_logo" type="TextureRect" parent="logos"]
@@ -567,44 +475,6 @@ grow_vertical = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_0t6n3")
 uri = "https://www.aseprite.org/"
 
-<<<<<<< HEAD
-[node name="buttons" type="Node" parent="."]
-
-[node name="quit_button" type="Button" parent="buttons"]
-anchors_preset = -1
-anchor_left = 0.395
-anchor_top = 0.699
-anchor_right = 0.574
-anchor_bottom = 0.773
-offset_left = 5.59998
-offset_top = -209.92
-offset_right = 5.39197
-offset_bottom = -209.872
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_jqgb1")
-theme_override_font_sizes/font_size = 32
-text = "Beenden"
-script = ExtResource("6_i7vpp")
-
-[node name="start_button" type="Button" parent="buttons"]
-anchors_preset = -1
-anchor_left = 0.396
-anchor_top = 0.42
-anchor_right = 0.575
-anchor_bottom = 0.494
-offset_left = -0.192017
-offset_top = -0.160004
-offset_right = -0.400024
-offset_bottom = -0.11203
-theme = ExtResource("5_jqgb1")
-theme_override_font_sizes/font_size = 32
-text = "Start"
-
-[connection signal="pressed" from="buttons/quit_button" to="buttons/quit_button" method="_on_pressed"]
-[connection signal="pressed" from="buttons/start_button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="buttons/start_button" to="buttons/start_button" method="_on_pressed"]
-=======
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
 initial_position = 2
@@ -640,4 +510,3 @@ stream = ExtResource("18_tmws5")
 [connection signal="pressed" from="logos/godot_logo/LinkButton_godot" to="ui/center_start/start_menu/buttons/start_ui_buttons/start_button" method="_on_link_button_godot_pressed"]
 [connection signal="pressed" from="logos/aseprite_logo/LinkButton_aseprite" to="ui/center_start/start_menu/buttons/start_ui_buttons/start_button" method="_on_link_button_aseprite_pressed"]
 [connection signal="file_selected" from="FileDialog" to="FileDialog" method="_on_file_selected"]
->>>>>>> f11a4d5f17f9842ba262acd520961c46f9ed1f20
